@@ -1,5 +1,6 @@
 import csv
 import pprint as pp
+import numpy as np
 
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
@@ -14,14 +15,6 @@ def load_stories(read):
         story_reader = csv.reader(csvfile, delimiter=',')
         story_lists = [row for row in story_reader]
     return [' '.join(story) for story in story_lists]
-
-
-# def text2seq(text):
-#     token = Tokenizer()
-#     token.fit_on_texts(text)  # Splits stories into indexed words
-#     vocab_idxs = token.texts_to_sequences(text)  # Vectorize story indexes
-#     max_len = max([len(story) for story in vocab_idxs])  # Longest story
-#     return pad_sequences(vocab_idxs, maxlen=max_len)  # Return padded vectors
 
 
 def build_rnn(vocab_size, embeddings, hidden, batch_size, timesteps):
@@ -65,7 +58,23 @@ def main(read):
                           batch_size=batch_size,
                           timesteps=max_len - 1)
 
+    # Train the RNN
+    epochs = 10
+    print("Training RNN on {} stories for {} epochs...".format(
+        len(X_train), epochs)
+    )
+    for epoch in range(epochs):
+        epoch_loss = []
+        for batch in range(0, len(X_train)):
+            batch_x = X_train[batch: batch + batch_size]
+            batch_y = y_train[batch: batch + batch_size, :, None]
+            batch_loss = rnn_model.train_on_batch(batch_x, batch_y)
+            epoch_loss.append(batch_loss)
+        print("Epoch: {} | Mean Error {%.3f}".format(
+            epoch + 1, np.mean(epoch_loss))
+        )
+
 
 if __name__ == '__main__':
-    # main('data/roc_stories_full.csv')
-    main('data/test.csv')
+    main('data/roc_stories_full.csv')
+    # main('data/test.csv')
