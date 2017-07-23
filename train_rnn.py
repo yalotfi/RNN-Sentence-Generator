@@ -88,7 +88,7 @@ def main(read, train=False):
         test_stories = [story for story in csv.reader(csvfile)]
     endings = [story[-1] for story in test_stories[-10:]]
     contexts = [' '.join(story[:-1]) for story in test_stories[-10:]]
-    indexes = token.texts_to_sequences(test_stories)
+    indexes = token.texts_to_sequences(contexts)
     print("First Context: {}\n{}".format(contexts[0], indexes[0]))
     print("First Ending: {}".format(endings[0]))
 
