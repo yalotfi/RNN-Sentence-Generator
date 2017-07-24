@@ -83,22 +83,35 @@ def main(read, train=False):
         rnn_model.load_weights('rnn_weights_96000.h5')
         print("Weights Loaded...")
 
-    # Load 25 contexts and endings
+    # Load 25 stories to test generative story endings
     with open('data/test_generation.csv', 'r') as csvfile:
-        test_stories = [story for story in csv.reader(csvfile)]
-    endings = [story[-1] for story in test_stories[-10:]]
-    contexts = [' '.join(story[:-1]) for story in test_stories[-10:]]
-    indexes = token.texts_to_sequences(contexts)
-    print("First Context: {}\n{}".format(contexts[0], indexes[0]))
-    print("First Ending: {}".format(endings[0]))
+        reader = csv.reader(csvfile)
+        test_stories = []
+        for story in reader:
+            # Test file has a blank column, just remove it if it exists
+            if len(story) == 6:
+                del story[-1]
+                test_stories.append(story)
+            else:
+                test_stories.append(story)
+
+    # Load larger vocabulary from different tokenizer
+    with open('tokenizer_96000.pkl', 'rb') as pklfile:
+        token = pickle.load(pklfile)
+        print("Vocab size: {}".format(len(token.word_index)))
+
+    # 3 Inputs: Context stories, their vector idxs, ending sentence (label)
+    contexts = [' '.join(story[:-1]) for story in test_stories]
+    context_idxs = token.texts_to_sequences(contexts)
+    endings = [story[-1] for story in test_stories]
 
     # Create a lookup table for the vocab indexes
     vocab_lookup = {index: word for word, index in token.word_index.items()}
-    end_of_sentence = ['.', '?', '!']
+    end_of_sentence = ['.', '?', '!']  # eos tokens
     pp.pprint(list(vocab_lookup.items())[:20])
 
     # Finally, generate some endings given a context!
-    for story, story_idxs, ending in zip(contexts, indexes, endings):
+    for story, story_idxs, ending in zip(contexts, context_idxs, endings):
         print("Context: ", story)
         print("Given Ending: ", ending)
         generated_ending = []
