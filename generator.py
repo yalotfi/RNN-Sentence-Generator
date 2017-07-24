@@ -48,7 +48,7 @@ def main():
     # Prepare inputs for the sequence generator
     endings = [story[-1] for story in test_stories]  # Labels for each story
     contexts = [' '.join(story[:-1]) for story in test_stories]  # Stories
-    context_idxs = token.texts_to_sequences(contexts)  # Input vecs to the RNN
+    context_idxs = token.texts_to_sequences(test_stories)  # Input vecs to the RNN
     pp.pprint(contexts[0])
     pp.pprint(context_idxs[0])
     pp.pprint(endings[0])
