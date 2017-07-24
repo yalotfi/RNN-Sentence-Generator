@@ -1,47 +1,85 @@
 import csv
 import pickle
-import numpy as np
+import pprint as pp
+# import numpy as np
+
+from keras.models import Sequential
+from keras.layers import Dense, TimeDistributed
+from keras.layers.embeddings import Embedding
+from keras.layers.recurrent import GRU
+
+
+def build_rnn(vocab_size, embeddings, hidden, batch_size, timesteps):
+    model = Sequential()
+    model.add(Embedding(batch_input_shape=(batch_size, timesteps),
+                        input_dim=vocab_size + 1,
+                        output_dim=embeddings,
+                        mask_zero=True))
+    model.add(GRU(hidden,
+                  return_sequences=True,
+                  stateful=True))
+    model.add(GRU(hidden,
+                  return_sequences=True,
+                  stateful=True))
+    model.add(TimeDistributed(Dense(vocab_size + 1, activation='softmax')))
+    model.compile(loss='sparse_categorical_crossentropy', optimizer='adam')
+    return model
 
 
 def main():
-    # Lod tokenizer
+    # Load 25 stories to test generative story endings
+    with open('data/test_generation.csv', 'r') as csvfile:
+        reader = csv.reader(csvfile)
+        test_stories = []
+        for story in reader:
+            # Test file has a blank column, just remove it if it exists
+            if len(story) == 6:
+                del story[-1]
+                test_stories.append(story)
+            else:
+                test_stories.append(story)
+    print("Will generate {} endings.".format(len(test_stories)))
+
+    # Load larger vocabulary from different tokenizer
     with open('tokenizer_96000.pkl', 'rb') as pklfile:
         token = pickle.load(pklfile)
         print("Vocab size: {}".format(len(token.word_index)))
 
-    # # Load 25 contexts and endings
-    with open('data/test_generation.csv', 'r') as csvfile:
-        test_stories = [story for story in csv.reader(csvfile)]
-    endings = [story[-1] for story in test_stories[-20:]]
-    contexts = [' '.join(story[:-1]) for story in test_stories[-20:]]
-    indexes = token.texts_to_sequences(contexts)
-    print("First Context: {}\n{}".format(contexts[0], indexes[0]))
-    print("First Ending: {}".format(endings[0]))
+    # Compile RNN architecture
+    vocab_size = len(token.word_index)
+    embeddings = 300
+    hidden_cells = 500
+    batch_size = 1
+    steps = 1
+    print("Compiling model with the following hyperparams:\n")
+    print(
+        "Vocab: {}\nEmbeddings: {}\nHidden: {}\nBatches: {}\nSteps: {}".format(
+            vocab_size, embeddings, hidden_cells, batch_size, steps))
+    rnn_model = build_rnn(vocab_size=vocab_size,
+                          embeddings=embeddings,
+                          hidden=hidden_cells,
+                          batch_size=batch_size,
+                          timesteps=steps)
+    print("Model Compiled...")
 
-    # # Create a lookup table for the vocab indexes
-    # vocab_lookup = {index: word for word, index in token.word_index.items()}
-    # end_of_sentence = ['.', '?', '!']
-    # pp.pprint(list(vocab_lookup.items())[:20])
+    # Load pre-trained weights
+    print("Loading Trained Weights...")
+    rnn_model.load_weights('rnn_weights_96000.h5')
+    print("Weights Trained Loaded...")
 
-    # # Finally, generate some endings given a context!
-    # for story, story_idxs, ending in zip(contexts, indexes, endings):
-    #     print("Context: ", story)
-    #     print("Given Ending: ", ending)
-    #     generated_ending = []
-    #     story_idxs = np.array(story_idxs)[None]
-    #     for step_idx in range(story_idxs.shape[-1]):
-    #         # Predict probability of next word
-    #         next_word = rnn_model.predict_on_batch(
-    #             story_idxs[:, step_idx])[0, -1]
-    #     while not generated_ending or vocab_lookup[next_word][-1] not in end_of_sentence:
-    #         next_word = np.random.choice(a=next_word.shape[-1], p=next_word)
-    #         generated_ending.append(next_word)
-    #         next_word = rnn_model.predict_on_batch(
-    #             np.array(next_word)[None, None])[0, -1]
-    #     rnn_model.reset_states()
-    #     generated_ending = ' '.join([vocab_lookup[word]
-    #                                  for word in generated_ending])
-    #     print("Generated Ending: {}\n".format(generated_ending))
+    # Prepare inputs for the sequence generator
+    contexts = [' '.join(story[:-1]) for story in test_stories]  # Stories
+    context_idxs = token.texts_to_sequences(contexts)  # Input vecs to the RNN
+    endings = [story[-1] for story in test_stories]  # Labels for each story
+    pp.pprint(contexts[0])
+    pp.pprint(context_idxs[0])
+    pp.pprint(endings[0])
+
+    # Create a lookup table for the vocab indexes
+    vocab_lookup = {index: word for word, index in token.word_index.items()}
+    end_of_sentence = ['.', '?', '!']  # eos tokens
+    print("Generated sentences will end on a", end_of_sentence)
+    pp.pprint(list(vocab_lookup.items())[:10])
 
 
 if __name__ == '__main__':
