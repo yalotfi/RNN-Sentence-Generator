@@ -42,7 +42,7 @@ def main():
 
     # Load larger vocabulary from different tokenizer
     with open('tokenizer_96000.pkl', 'rb') as pklfile:
-        token = pickle.load(pklfile)
+        token = pickle.load(pklfile, encoder='latin1')
         print("Vocab size: {}".format(len(token.word_index)))
 
     # Prepare inputs for the sequence generator
