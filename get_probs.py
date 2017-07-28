@@ -1,6 +1,5 @@
 import numpy as np
 import csv
-import pprint as pp
 
 from keras.models import load_model
 from keras.preprocessing.text import Tokenizer
@@ -10,6 +9,7 @@ def get_probs(seq, tokenizer, rnn):
     probs = []
     seq = tokenizer.texts_to_sequences([seq])[0]
     seq = np.array(seq)[None]  # reshape as (1, seq_length)
+    print(seq)
     for idx in range(seq.shape[-1] - 1):
         # get prob of next word
         prob = rnn.predict_on_batch(seq[:, idx])[0, -1][seq[0, idx + 1]]
@@ -33,7 +33,6 @@ def main(story_path, model_path):
     tokenizer = Tokenizer(lower=True, filters='')
     # split stories into words, assign number to each unique word
     tokenizer.fit_on_texts(stories)
-    pp.pprint(list(tokenizer.word_index.items())[:20])
 
     print("\nLoading Model...\n")
     rnn = load_model(model_path)
@@ -61,4 +60,4 @@ def main(story_path, model_path):
 
 
 if __name__ == '__main__':
-    main('example_train_stories.csv', 'model/rnn_model.h5')
+    main('data/example_train_stories.csv', 'model/rnn_model.h5')
