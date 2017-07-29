@@ -77,7 +77,7 @@ def main(model_path, vocab_path, test_path, gen_iters):
             word_prob = rnn_lm.predict_on_batch(
                 np.array(next_p)[None, None])[0, -1]
 
-        # Reset the hidden states to not influence the next generation
+        # Reset the hidden states to not influence the next ending
         rnn_lm.reset_states()
 
         # Finally go sequence to word from our vocab dictionary and print
