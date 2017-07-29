@@ -1,10 +1,9 @@
 import csv
-import pprint as pp
+# import pprint as pp
 import numpy as np
 
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
-from keras.models import model_from_json
 from keras.models import Sequential
 from keras.layers import Dense, TimeDistributed
 from keras.layers.embeddings import Embedding
@@ -43,92 +42,51 @@ def main(read, train=False):
     token.fit_on_texts(stories)  # Splits stories into indexed words
     vocab_idxs = token.texts_to_sequences(stories)  # Vectorize story indexes
     max_len = max([len(story) for story in vocab_idxs])  # Longest story
+
     # Create matrix, X, where X[i, :] is a story vector
     story_matrix = pad_sequences(vocab_idxs, maxlen=max_len)
 
     # Offset each word by 1 so that every input word, x[i], maps to y[i + 1]
     X_train, y_train = story_matrix[:, :-1], story_matrix[:, 1:]
 
-    # Graph RNN with input hyperparams
-    print("Building Model...")
+    # Compile RNN architecture
     batch_size = 20
-    rnn_model = build_rnn(vocab_size=len(token.word_index),
-                          embeddings=300,
-                          hidden=500,
+    vocab_size = len(token.word_index)
+    embeddings = 300
+    hidden_cells = 500
+    steps = max_len - 1
+    print("\nCompiling model with the following hyperparams:")
+    print(
+        "Vocab: {}\nEmbeddings: {}\nHidden: {}\nBatches: {}\nSteps: {}".format(
+            vocab_size, embeddings, hidden_cells, batch_size, steps))
+    rnn_model = build_rnn(vocab_size=vocab_size,
+                          embeddings=embeddings,
+                          hidden=hidden_cells,
                           batch_size=batch_size,
-                          timesteps=max_len - 1)
-    print("Model Compiled...")
+                          timesteps=steps)
+    print("\nModel Compiled...\n")
 
-    # Either train the model or load weights of a trained RNN
-    if train:
-        # Train the RNN
-        epochs = 10
-        print("Training RNN on {} stories for {} epochs...".format(
-            len(X_train), epochs)
+    # Train the RNN
+    epochs = 10
+    print("Training RNN on {} stories for {} epochs...".format(
+        len(X_train), epochs)
+    )
+    for epoch in range(epochs):
+        epoch_loss = []
+        for batch in range(0, len(X_train)):
+            batch_x = X_train[batch: batch + batch_size]
+            batch_y = y_train[batch: batch + batch_size, :, None]
+            batch_loss = rnn_model.train_on_batch(batch_x, batch_y)
+            epoch_loss.append(batch_loss)
+        print("Epoch: {} | Mean Error {%.3f}".format(
+            epoch + 1, np.mean(epoch_loss))
         )
-        for epoch in range(epochs):
-            epoch_loss = []
-            for batch in range(0, len(X_train)):
-                batch_x = X_train[batch: batch + batch_size]
-                batch_y = y_train[batch: batch + batch_size, :, None]
-                batch_loss = rnn_model.train_on_batch(batch_x, batch_y)
-                epoch_loss.append(batch_loss)
-            print("Epoch: {} | Mean Error {%.3f}".format(
-                epoch + 1, np.mean(epoch_loss))
-            )
-            rnn_model.save_weights('rnn_weights.h5')
-    else:
-        # Load model weights
-        print("Loading Weights...")
-        rnn_model.load_weights('rnn_weights_96000.h5')
-        print("Weights Loaded...")
+        rnn_model.save_weights('rnn_weights.h5')
 
-    # Load 25 stories to test generative story endings
-    with open('data/test_generation.csv', 'r') as csvfile:
-        reader = csv.reader(csvfile)
-        test_stories = []
-        for story in reader:
-            # Test file has a blank column, just remove it if it exists
-            if len(story) == 6:
-                del story[-1]
-                test_stories.append(story)
-            else:
-                test_stories.append(story)
-
-    # Load larger vocabulary from different tokenizer
-    with open('tokenizer_96000.pkl', 'rb') as pklfile:
-        token = pickle.load(pklfile)
-        print("Vocab size: {}".format(len(token.word_index)))
-
-    # 3 Inputs: Context stories, their vector idxs, ending sentence (label)
-    contexts = [' '.join(story[:-1]) for story in test_stories]
-    context_idxs = token.texts_to_sequences(contexts)
-    endings = [story[-1] for story in test_stories]
-
-    # Create a lookup table for the vocab indexes
-    vocab_lookup = {index: word for word, index in token.word_index.items()}
-    end_of_sentence = ['.', '?', '!']  # eos tokens
-    pp.pprint(list(vocab_lookup.items())[:20])
-
-    # Finally, generate some endings given a context!
-    for story, story_idxs, ending in zip(contexts, context_idxs, endings):
-        print("Context: ", story)
-        print("Given Ending: ", ending)
-        generated_ending = []
-        story_idxs = np.array(story_idxs)[None]
-        for step_idx in range(story_idxs.shape[-1]):
-            # Predict probability of next word
-            next_word = rnn_model.predict_on_batch(
-                story_idxs[:, step_idx])[0, -1]
-        while not generated_ending or vocab_lookup[next_word][-1] not in end_of_sentence:
-            next_word = np.random.choice(a=next_word.shape[-1], p=next_word)
-            generated_ending.append(next_word)
-            next_word = rnn_model.predict_on_batch(
-                np.array(next_word)[None, None])[0, -1]
-        rnn_model.reset_states()
-        generated_ending = ' '.join([vocab_lookup[word]
-                                     for word in generated_ending])
-        print("Generated Ending: {}\n".format(generated_ending))
+    # # Load pre-trained weights
+    # print("Loading Trained Weights...\n")
+    # rnn_model.load_weights(weights_path)  # Third main() param
+    # print("Weights Trained Loaded...\n")
 
 
 if __name__ == '__main__':
