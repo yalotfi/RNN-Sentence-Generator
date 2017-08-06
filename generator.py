@@ -54,7 +54,7 @@ def main(model_path, vocab_path, test_path, gen_iters):
     sequences = token.texts_to_sequences(contexts)
 
     # Generate endings for the first i stories loaded into session
-    for i in range(gen_iters):
+    for i in range(gen_iters):  # Fourth main() param
         # Format log output
         print("Story Number: {}".format(i + 1))
         print("CONTEXT: {}".format(contexts[i]))
