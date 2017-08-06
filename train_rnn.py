@@ -81,7 +81,7 @@ def main(read, train=False):
         print("Epoch: {} | Mean Error {%.3f}".format(
             epoch + 1, np.mean(epoch_loss))
         )
-        rnn_model.save_weights('rnn_weights.h5')
+    rnn_model.save_weights('rnn_weights.h5')
 
     # # Load pre-trained weights
     # print("Loading Trained Weights...\n")
