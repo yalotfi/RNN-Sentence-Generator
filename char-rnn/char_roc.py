@@ -11,12 +11,6 @@ from keras.optimizers import RMSprop
 
 
 def sample(preds, temperature=1.0):
-    '''
-    --- Helper function to sample from softmax output ---
-    Takes input prediction vector and a temperature parameter. Larger temp
-    will generate more diverse samples at the cost of accuracy while small
-    values will be more confident but conservative.
-    '''
     preds = np.asarray(preds).astype('float64')
     preds = np.log(preds) / temperature
     exp_preds = np.exp(preds)
@@ -29,18 +23,23 @@ def main(txt_path):
     # read corpus and create vocabulary of language model
     corpus = open(txt_path).read().lower()
     vocab = sorted(list(set(corpus)))
+    print('Corpus Length: {}\nVocab Size: {}\n'.format(
+        len(corpus), len(vocab)))
 
     # dictionary of char indexes
     chars2idxs = dict((c, i) for i, c in enumerate(vocab))
     idxs2chars = dict((i, c) for i, c in enumerate(vocab))
+    print('Dictionary Map: {} | {}\n'.format(
+        chars2idxs['.'], idxs2chars[6]))
 
     # split corpus into input/output sequences for rnn
     maxlen = 40
-    step = 3
+    step = 22
     sentences, next_chars = [], []
     for i in range(0, len(corpus) - maxlen, step):
         sentences.append(corpus[i: i + maxlen])
         next_chars.append(corpus[i + maxlen])
+    print('Number of sequences: {}\n'.format(len(sentences)))
 
     # vectorize the sequences using the [char: idx]
     print('Vectorization...\n')
@@ -50,26 +49,19 @@ def main(txt_path):
         for t, char in enumerate(sentence):
             X[i, t, chars2idxs[char]] = 1
         y[i, chars2idxs[next_chars[i]]] = 1
+    print('X: {}\ny: {}\n'.format(X.shape, y.shape))
 
     # Compile the Keras model
-    print("Building Model...")
+    print("Building Model...\n")
     model = Sequential()
     model.add(LSTM(128, input_shape=(maxlen, len(vocab))))
     model.add(Dense(len(vocab)))
     model.add(Activation('softmax'))
     model.compile(loss='categorical_crossentropy', optimizer=RMSprop(lr=0.01))
-
-    # console log
-    print('Corpus Length: {}\nVocab Size: {}\n'.format(
-        len(corpus), len(vocab)))
-    print('Dictionary Map: {} | {}\n'.format(
-        chars2idxs['.'], idxs2chars[6]))
-    print('Number of sequences: {}\n'.format(len(sentences)))
-    print('X: {}\ny: {}\n'.format(X.shape, y.shape))
     print(model.summary())
 
     # Bulk of the work starts here...
-    for iteration in range(1, 60):
+    for iteration in range(1, 101):
         print()
         print("-" * 50)
         print("Iteration ", iteration)
@@ -81,7 +73,7 @@ def main(txt_path):
 
         # Sample text at 4 different "diversity" settings - see sample() docs
         start_index = random.randint(0, len(corpus) - maxlen - 1)
-        for diversity in [0.2, 0.5, 1.0, 1.2]:
+        for diversity in [0.5, 0.75, 1.0]:
             print()
             print("---- diversity: ", diversity)
 
@@ -92,7 +84,7 @@ def main(txt_path):
             sys.stdout.write(generated)
 
             # Actual generation occurs here:
-            for i in range(400):
+            for i in range(140):
                 x = np.zeros((1, maxlen, len(vocab)))
 
                 # Map between output sequence and char dictionary
@@ -112,6 +104,6 @@ def main(txt_path):
 
 
 if __name__ == '__main__':
-    txt_path = os.path.join('data', 'roc_text.txt')
+    txt_path = os.path.join('data', 'roc_text_full.txt')
     print('\nReading text from {}\n'.format(txt_path))
     main(txt_path)
