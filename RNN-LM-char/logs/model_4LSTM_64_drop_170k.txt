@@ -1,0 +1,697 @@
+Using TensorFlow backend.
+
+Reading text from data\roc_text_mid.txt
+
+Corpus Length: 176326
+Vocab Size: 50
+
+Dictionary Map: 8 | ,
+
+Number of sequences: 176286
+
+Vectorization...
+
+X: (176286, 40, 50)
+y: (176286, 50)
+
+Building Model...
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+lstm_1 (LSTM)                (None, 40, 64)            29440
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 40, 64)            0
+_________________________________________________________________
+lstm_2 (LSTM)                (None, 40, 64)            33024
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 40, 64)            0
+_________________________________________________________________
+lstm_3 (LSTM)                (None, 40, 64)            33024
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 40, 64)            0
+_________________________________________________________________
+lstm_4 (LSTM)                (None, 64)                33024
+_________________________________________________________________
+dropout_4 (Dropout)          (None, 64)                0
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                3250
+_________________________________________________________________
+activation_1 (Activation)    (None, 50)                0
+=================================================================
+Total params: 131,762
+Trainable params: 131,762
+Non-trainable params: 0
+_________________________________________________________________
+None
+
+--------------------------------------------------
+Iteration  1
+Epoch 1/1
+2017-08-10 02:54:30.631244: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 02:54:30.631335: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 02:54:30.631426: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 02:54:30.631513: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 02:54:30.631596: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 02:54:30.631985: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 02:54:30.632283: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 02:54:30.632782: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 02:54:30.878707: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:940] Found device 0 with properties:
+name: GeForce GTX 970
+major: 5 minor: 2 memoryClockRate (GHz) 1.3165
+pciBusID 0000:01:00.0
+Total memory: 4.00GiB
+Free memory: 3.31GiB
+2017-08-10 02:54:30.878826: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:961] DMA: 0
+2017-08-10 02:54:30.880027: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:971] 0:   Y
+2017-08-10 02:54:30.880342: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0)
+2017-08-10 02:54:33.611615: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 10633 get requests, put_count=5100 evicted_count=1000 eviction_rate=0.196078 and unsatisfied allocation rate=0.623813
+2017-08-10 02:54:33.611705: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 100 to 110
+   128/176286 [..............................] - ETA: 4202s - loss: 3.91192017-08-10 02:54:33.806853: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 1904 get requests, put_count=5915 evicted_count=4000 eviction_rate=0.676247 and unsatisfied allocation rate=0
+   384/176286 [..............................] - ETA: 1536s - loss: 3.75522017-08-10 02:54:34.094086: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 359 get requests, put_count=1372 evicted_count=1000 eviction_rate=0.728863 and unsatisfied allocation rate=0
+   512/176286 [..............................] - ETA: 1213s - loss: 3.65522017-08-10 02:54:34.295739: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 2188 get requests, put_count=6202 evicted_count=4000 eviction_rate=0.644953 and unsatisfied allocation rate=0
+   768/176286 [..............................] - ETA: 876s - loss: 3.4668 2017-08-10 02:54:34.559452: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 620 get requests, put_count=1639 evicted_count=1000 eviction_rate=0.610128 and unsatisfied allocation rate=0
+   896/176286 [..............................] - ETA: 780s - loss: 3.44892017-08-10 02:54:34.755827: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 2526 get requests, put_count=7547 evicted_count=5000 eviction_rate=0.662515 and unsatisfied allocation rate=0
+  1152/176286 [..............................] - ETA: 651s - loss: 3.37382017-08-10 02:54:35.024562: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 963 get requests, put_count=2988 evicted_count=2000 eviction_rate=0.669344 and unsatisfied allocation rate=0
+  1408/176286 [..............................] - ETA: 570s - loss: 3.32502017-08-10 02:54:35.300708: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 13116 get requests, put_count=12823 evicted_count=6000 eviction_rate=0.467909 and unsatisfied allocation rate=0.48193
+2017-08-10 02:54:35.300791: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 309 to 339
+  1536/176286 [..............................] - ETA: 540s - loss: 3.30732017-08-10 02:54:35.498174: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 1580 get requests, put_count=4613 evicted_count=3000 eviction_rate=0.650336 and unsatisfied allocation rate=0
+  1792/176286 [..............................] - ETA: 491s - loss: 3.27502017-08-10 02:54:35.769581: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 627 get requests, put_count=1667 evicted_count=1000 eviction_rate=0.59988 and unsatisfied allocation rate=0
+  1920/176286 [..............................] - ETA: 472s - loss: 3.25392017-08-10 02:54:35.965997: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 2527 get requests, put_count=7571 evicted_count=5000 eviction_rate=0.660415 and unsatisfied allocation rate=0
+  2176/176286 [..............................] - ETA: 440s - loss: 3.22892017-08-10 02:54:36.244473: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 1585 get requests, put_count=4639 evicted_count=3000 eviction_rate=0.646691 and unsatisfied allocation rate=0
+  2432/176286 [..............................] - ETA: 415s - loss: 3.20652017-08-10 02:54:36.524644: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 538 get requests, put_count=1603 evicted_count=1000 eviction_rate=0.62383 and unsatisfied allocation rate=0
+  2560/176286 [..............................] - ETA: 404s - loss: 3.20092017-08-10 02:54:36.733645: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 2542 get requests, put_count=7614 evicted_count=5000 eviction_rate=0.656685 and unsatisfied allocation rate=0
+  2816/176286 [..............................] - ETA: 387s - loss: 3.18552017-08-10 02:54:37.037444: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 1594 get requests, put_count=4681 evicted_count=3000 eviction_rate=0.640889 and unsatisfied allocation rate=0
+  3072/176286 [..............................] - ETA: 371s - loss: 3.17252017-08-10 02:54:37.326773: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 1270 get requests, put_count=3375 evicted_count=2000 eviction_rate=0.592593 and unsatisfied allocation rate=0
+  3328/176286 [..............................] - ETA: 358s - loss: 3.15432017-08-10 02:54:37.628433: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 472 get requests, put_count=1599 evicted_count=1000 eviction_rate=0.625391 and unsatisfied allocation rate=0
+  3584/176286 [..............................] - ETA: 347s - loss: 3.14162017-08-10 02:54:37.952522: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 506 get requests, put_count=1660 evicted_count=1000 eviction_rate=0.60241 and unsatisfied allocation rate=0
+  3840/176286 [..............................] - ETA: 338s - loss: 3.13412017-08-10 02:54:38.273710: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 680 get requests, put_count=1866 evicted_count=1000 eviction_rate=0.535906 and unsatisfied allocation rate=0
+  4096/176286 [..............................] - ETA: 329s - loss: 3.12002017-08-10 02:54:38.598591: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 1281 get requests, put_count=3506 evicted_count=2000 eviction_rate=0.570451 and unsatisfied allocation rate=0
+  4480/176286 [..............................] - ETA: 317s - loss: 3.11182017-08-10 02:54:39.035634: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 13638 get requests, put_count=14278 evicted_count=4000 eviction_rate=0.280151 and unsatisfied allocation rate=0.266315
+2017-08-10 02:54:39.035727: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 2997 to 3296
+  4864/176286 [..............................] - ETA: 308s - loss: 3.10302017-08-10 02:54:39.519148: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 586 get requests, put_count=1984 evicted_count=1000 eviction_rate=0.504032 and unsatisfied allocation rate=0
+176286/176286 [==============================] - 221s - loss: 2.5224
+
+---- diversity:  0.5
+---- Generated with seed: "he weather was cold. but the next day, i"
+he weather was cold. but the next day, i tang to was ineneeoded tang. the tate to jire the woced his to rot the was ant mhint.
+this sind. and and the ter the fer wat he bor a hod was carar sine site posed o das said and him the andered jhe
+
+---- diversity:  1.0
+---- Generated with seed: "he weather was cold. but the next day, i"
+he weather was cold. but the next day, in. olmece toamy. dase hathy tilpedtire neog ut tramicsr has virchaog tacunk coandy. hirir. tas mogten theted oeivs. and cuct sain tead loalst a dadd. pute. te lopipl. thiuy soved hond too word.. dhep,
+
+---- diversity:  1.2
+---- Generated with seed: "he weather was cold. but the next day, i"
+he weather was cold. but the next day, inaeg. anksatanhsd roedy'g toe nute. ot hid suk. mhapmen
+ st. sand, huaasdk lhits uwe lias torceri werh had wereead. shad m's hokerhont ot. she benkdube huted buten, soaty'ced. fhe likhieg.
+cidct frag'
+
+--------------------------------------------------
+Iteration  2
+Epoch 1/1
+176286/176286 [==============================] - 219s - loss: 2.2929
+
+---- diversity:  0.5
+---- Generated with seed: " better and more diverse cooker. she was"
+ better and more diverse cooker. she was to to the the to she hoth to to hote the sorly harled o har the narind ow to me and thod the bite her and to pomh sate to was wrenked to to toring i fe the ro farf and the bind and the selicing the t
+
+---- diversity:  1.0
+---- Generated with seed: " better and more diverse cooker. she was"
+ better and more diverse cooker. she was pos. lhave en mer to becroett shey medl ot a gidleysite oneram eoerenye  remcwuneo and loch the drosogacorhed tosed'n jlepm nurlict. ee. dotetlinn in al hhose asdose mere nearm ripe ang. she trataage
+
+---- diversity:  1.2
+---- Generated with seed: " better and more diverse cooker. she was"
+ better and more diverse cooker. she was a ninsoo. he to wad pacl acoaye. lonry wimi torpeir.
+he arlonht. se lol. seased tarh, ters bootele. tidnt hend the anker. bufhinu
+whhomt. she wigh rowinm
+by. nvubcted ef. alkoiseby lifer'd ntomss ct
+
+--------------------------------------------------
+Iteration  3
+Epoch 1/1
+176286/176286 [==============================] - 232s - loss: 2.2367
+
+---- diversity:  0.5
+---- Generated with seed: "t was able to see the performance. she s"
+t was able to see the performance. she sol to bored the lated on i and to the wase and the hos of his asd her to wasked werty has besd to the nereted the to at on wer caded. he her the he to the tacled sod was the to the pot the mond the do
+
+---- diversity:  1.0
+---- Generated with seed: "t was able to see the performance. she s"
+t was able to see the performance. she staod peas the buanls sovlared fam an. tho inphe aod hamesar. she colt in wietet to torr bothy. hit sovsuneing to pecteas sonns pec ircol on wers uw behtlriten to afode wat hase tins wasije theme isth
+
+---- diversity:  1.2
+---- Generated with seed: "t was able to see the performance. she s"
+t was able to see the performance. she shomited wed. he want fag ohe sokeenrh felent pyweetugy it ther im a hirked. to clromth'n. whe her tafts purdy bugt pir larom he glopuein. iod ot addhein tlat id uply ttutem hine. harots pus.
+my fultap
+
+--------------------------------------------------
+Iteration  4
+Epoch 1/1
+176286/176286 [==============================] - 219s - loss: 2.2074
+
+---- diversity:  0.5
+---- Generated with seed: " up and threw the recliner away.
+jenna w"
+ up and threw the recliner away.
+jenna was was fent her on was bond to baw and the halted und. jull baet to hame and lent. ant was was the aptured hay lane for the tann leonle to the socy a ca sale had a peut and gon the het for the weur to
+
+---- diversity:  1.0
+---- Generated with seed: " up and threw the recliner away.
+jenna w"
+ up and threw the recliner away.
+jenna was utiw to sec thra geer's ufacok of aufay uad. fem in enw frilr and dles. the it und sas to pont dery her has of
+to soring. mrece.
+u if was on. dogey bir graemy. she was unsinck head. get. fart't sti
+
+---- diversity:  1.2
+---- Generated with seed: " up and threw the recliner away.
+jenna w"
+ up and threw the recliner away.
+jenna ware made. he havter to than kodtnonad nafens inso shaafdic fruter. suhe nirins soin sray woek ho dle. pigereo lod aunc i cude fatee foat tussnenosydsd dats ofed op.
+iv ay fraake hir to had daw cheuldn
+
+--------------------------------------------------
+Iteration  5
+Epoch 1/1
+176286/176286 [==============================] - 220s - loss: 2.1851
+
+---- diversity:  0.5
+---- Generated with seed: " find a leprechaun in there. i put candy"
+ find a leprechaun in there. i put candy the bit to haped to cound has he the was wanted hit to cone his of her lon for the based at she tetlacy was asen and the ninrery to rart her the do she nor sams he and to to the wathing biged wishhon
+
+---- diversity:  1.0
+---- Generated with seed: " find a leprechaun in there. i put candy"
+ find a leprechaun in there. i put candy hod so yim.
+he cule sow tadde on the weals wised atterloge niod crrots to col.
+i erkead widh hit srricnenst we u tons firian dacsure biehonting soms. his ho she afanaag the poim to imigets his ha pad
+
+---- diversity:  1.2
+---- Generated with seed: " find a leprechaun in there. i put candy"
+ find a leprechaun in there. i put candy lirkeme lorce bethweded ryy was fy scafs midinl.char_roc.py:16: RuntimeWarning: divide by zero encountered in log
+  preds = np.log(preds) / temperature
+ the rratgennrijer. a drocing mere raning.
+he coould swionhes banding cint. unseigedtoy lesdelote of in inreomed of hid a tigired and wome beetpyer cui
+
+--------------------------------------------------
+Iteration  6
+Epoch 1/1
+176286/176286 [==============================] - 216s - loss: 2.1700
+
+---- diversity:  0.5
+---- Generated with seed: "spiration. he set to typing furiously. b"
+spiration. he set to typing furiously. bid to the doat for to cow deviyer for hald wated and i was to his tap her flave wenk the tore her conder in cat the posted and leoded and the and bow u was gade has her fact the eft was the dut was th
+
+---- diversity:  1.0
+---- Generated with seed: "spiration. he set to typing furiously. b"
+spiration. he set to typing furiously. bin indenat his say to bowver, the mamadhh, and horh her uf wishy fot dald penwenh clhacn
+duonk up a trahp haca was sopaw. alcharle and  wolk to fed a rady ofunged. she gudting she out to work, she to
+
+---- diversity:  1.2
+---- Generated with seed: "spiration. he set to typing furiously. b"
+spiration. he set to typing furiously. biugil,
+gindted when the fe haalsils her kow fanlenns her paalroap faccanle trudton the thoed ah they javeis. thereer abhe mitieg her punod fleumd ,ad bay't misl bassaetssraten agt shoo the wotath. eve
+
+--------------------------------------------------
+Iteration  7
+Epoch 1/1
+176286/176286 [==============================] - 213s - loss: 2.1599
+
+---- diversity:  0.5
+---- Generated with seed: "racticed hard. soon he was the best flut"
+racticed hard. soon he was the best fluted his and to the case dowd on the tert foold as the tool has to soot an the ton hoide her farked wert alcenley a sirk to sar in at his a stauded be to soneed in of she brolt her on the sorn solter sh
+
+---- diversity:  1.0
+---- Generated with seed: "racticed hard. soon he was the best flut"
+racticed hard. soon he was the best flutitaguwn iicos to lang to the ceatred hotc welt the wurted i macater incoct have alrriyped the hece rugt cork cliye mulk. inesebofd sborpe fare. a brosatsels. um doo a in. he wo, toin was doanthed me h
+
+---- diversity:  1.2
+---- Generated with seed: "racticed hard. soon he was the best flut"
+racticed hard. soon he was the best flutargs deite wish. her tmu. she eecd celesss cenfeslh somter anrlo at jof rovs fay haneems lehwes grejeated ismumforceging. bumganny dousing madheed fads to spuse iy the ald. mebod swe afticed meclived
+
+--------------------------------------------------
+Iteration  8
+Epoch 1/1
+176286/176286 [==============================] - 213s - loss: 2.1496
+
+---- diversity:  0.5
+---- Generated with seed: "told samantha that doug needed a new wat"
+told samantha that doug needed a new wathed and for. he was seil a sor a therrlure.
+the fike to the seury were the wate her them rucer a dited her moding the same and and frols of sonn soper and the fore on the dind tink. the very she has h
+
+---- diversity:  1.0
+---- Generated with seed: "told samantha that doug needed a new wat"
+told samantha that doug needed a new wathhovered she criyed her beplend at aly althel ded dow camlutawed af mecided a miem ste. ipi. eedenioge. legire. solh fours to nuin undeodnds nuke and bri'n mi
+atefislh afling and bas her caltel meyd
+
+---- diversity:  1.2
+---- Generated with seed: "told samantha that doug needed a new wat"
+told samantha that doug needed a new watiry.
+dyazen mired and neee tekxem on yrewpfiny wamkaw. she kowp. ly gauin fints. shis finss ut soce wros oun hamhid fon iod hove ifeudelabely to meuced a palle ciwiaaame hagire grindly bip.
+nubns. i p
+
+--------------------------------------------------
+Iteration  9
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1398
+
+---- diversity:  0.5
+---- Generated with seed: "saw that her hair was very greasy. she r"
+saw that her hair was very greasy. she rie wenk to be as his boan bewing has lishide eh the finded the shot cad cus hose her talk the her the fay the anper her an anrerer nood he rosted she to a deled a case to was cad a she cor the dog the
+
+---- diversity:  1.0
+---- Generated with seed: "saw that her hair was very greasy. she r"
+saw that her hair was very greasy. she rolted. he piusilom to chiy. anemantide. jo, brind wished ant. as elt bopturery sog wlaif to wenriughe fet fecmone pet wotensan bimanso't ols anesfos. e bagere son. s junned moow, whean a viwha same be
+
+---- diversity:  1.2
+---- Generated with seed: "saw that her hair was very greasy. she r"
+saw that her hair was very greasy. she rocmysaid dusint atd, koar, the seught lesoo counde an feclaaked that dot  pisii nubth. to nainer gy soden shelreny bastry rike. overemsomepy finsmen withs. ol wel fed. she was noom wym fols snoegice b
+
+--------------------------------------------------
+Iteration  10
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1360
+
+---- diversity:  0.5
+---- Generated with seed: " plans to hike a mountain, to machu picc"
+ plans to hike a mountain, to machu picciced aldered the dean her tead naoner he hecked to soale noas she khone. moted so wated the wirry sorler to dess trest the fist she and there in the melt the dest. he sa could to bor the tord to tarle
+
+---- diversity:  1.0
+---- Generated with seed: " plans to hike a mountain, to machu picc"
+ plans to hike a mountain, to machu piccing mohelwend on secesy. a segmeun in beanst on gewend ko thoed. ta, he thimim watwaurang fise a dit. the wolk shot.
+the doek,
+she ool prive of hocp i miroed sigelh colking had oed the dardss an she b
+
+---- diversity:  1.2
+---- Generated with seed: " plans to hike a mountain, to machu picc"
+ plans to hike a mountain, to machu piccode, bings, for. otivh, he muatt for hopolhe hinde's a. lreskig. cy o purt enri wat kid smave the joo. she ehbhy boon buverort. i goand minlenrils rutaead. polven bh cahe hudcertods a norcylanss on. d
+
+--------------------------------------------------
+Iteration  11
+Epoch 1/1
+176286/176286 [==============================] - 211s - loss: 2.1322
+
+---- diversity:  0.5
+---- Generated with seed: "p, he takes the thermos to work with him"
+p, he takes the thermos to work with him and the a mennerand sops her and to the door to her the and to the neod to see to the ming had in the le fons to to the wite the cotpas a tarkir to the haghed of enter a barmy with her and faster was
+
+---- diversity:  1.0
+---- Generated with seed: "p, he takes the thermos to work with him"
+p, he takes the thermos to work with him and balcty bocting to go foald kooning in and taud ut coived me moholys the land bresbeleuy nims and us her the het and deversited to tirn. foi't hupt his huspaned birld. the caper to nan muth sike i
+
+---- diversity:  1.2
+---- Generated with seed: "p, he takes the thermos to work with him"
+p, he takes the thermos to work with him thoate. reoconagy rising he toranh clide. her wards. he oten didd. bus.
+suveod nityy to he hernfsbe bat basy. the pustorivegtave diam oxfucen in the catey fenred
+the posk. she gaped ap. rahte! rick.
+
+--------------------------------------------------
+Iteration  12
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1348
+
+---- diversity:  0.5
+---- Generated with seed: " the source of the cough was quickly fou"
+ the source of the cough was quickly found his sink was beer his stase son one deteted the tide wish was melisy vided a tate his sass and her to and a ate geot bame her had her asser she did the she lod the were to for the was. in the sowk
+
+---- diversity:  1.0
+---- Generated with seed: " the source of the cough was quickly fou"
+ the source of the cough was quickly fous ail to dear, as to fast his wiy. he astaded she fiweripare's limenl gad arhtdian to lude. at were were for srotcen. he pirget. a handly deerrass in.
+tuce ovung to cind the mow  speeud. her o sio, we
+
+---- diversity:  1.2
+---- Generated with seed: " the source of the cough was quickly fou"
+ the source of the cough was quickly fouruo leiodespis irrigite. con bilhofits ooka stretking mopen bioked by thonp, an foded giwttron'm her if rosped rooinlm thingen poogy. buact  hety apteds one coycesre. it i cendicsafe if. he her u func
+
+--------------------------------------------------
+Iteration  13
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1283
+
+---- diversity:  0.5
+---- Generated with seed: " beth decided to stay at home and go to "
+ beth decided to stay at home and go to it were the beon she siglacing the get her the salang oat over her was was to and was chear. he and the and shalning so has a and her and at haged to her to dith i gelars corderter to sey in the sriy
+
+---- diversity:  1.0
+---- Generated with seed: " beth decided to stay at home and go to "
+ beth decided to stay at home and go to sbifved beurushlahed malu pont.
+tardt mappiar. iicubgiit, she pents fet. i seshers he lraur coaghater la undoliter and had detars fer the ariuthemers in the daple trolh a dasmidcins snereain tagemtene
+
+---- diversity:  1.2
+---- Generated with seed: " beth decided to stay at home and go to "
+ beth decided to stay at home and go to colted at
+tomtay. eterseatoy  id bapmo garet. the slaad't pasprurp cacciwhened.
+bive he prixrenalcae wanted da tillhave.
+tho se'n had waraning o ga nrohkhe her il ve ounsky a snarrlrocssukpiase aswy w
+
+--------------------------------------------------
+Iteration  14
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1329
+
+---- diversity:  0.5
+---- Generated with seed: "r heading right towards her. she has no "
+r heading right towards her. she has no and sult as and mosing and sirted to was ham to was and the docted to see and the lonk sarrented the to the torte soid the save,
+matint and the tiuted to silt to the dohg on the mave in corder mage as
+
+---- diversity:  1.0
+---- Generated with seed: "r heading right towards her. she has no "
+r heading right towards her. she has no wery.
+sait cotupovher serted din as the cemerleved on has rold horgs. shis jreey rugak was snowydy. bocine.
+atpiripione. cer were in kot as shoting the mrodked to the vauy pob wresitrils.
+laol the ver
+
+---- diversity:  1.2
+---- Generated with seed: "r heading right towards her. she has no "
+r heading right towards her. she has no for gapus,
+lodpe junnoss oh thinlh her nratd a netty that the ebos her souuse madhletod sirat. so e'c. yepzy cot sshacy. mom cots hosh eultsohe. she wither a toud the to saud brrod were rosip dumed am
+
+--------------------------------------------------
+Iteration  15
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1421
+
+---- diversity:  0.5
+---- Generated with seed: "it. when he got home she was asleep. the"
+it. when he got home she was asleep. the geesled was the tolm at the porened the gaon birthde don hame and tated enreked to wanked to the wort to the were the a heoo and shinle to the falah the tood to has to word the tirt boon to was the s
+
+---- diversity:  1.0
+---- Generated with seed: "it. when he got home she was asleep. the"
+it. when he got home she was asleep. the gu cobworrnaned
+an mret mew to sote i heon fame fiipocn and he and lotter yis on his poved to harped. she sowe whece temly uitib,
+shantas dandli to actighh hoeth in she to ut sodnant.
+one rinty tham
+
+---- diversity:  1.2
+---- Generated with seed: "it. when he got home she was asleep. the"
+it. when he got home she was asleep. the talgigy fink. ta to  gan in. pan. he etrome. chokler to the weonorielid of lince. piche. ona wo gucandty that winty.
+hlercosll fefl neiteame thas uaso. he pleped them everhbrote oat to the whek and t
+
+--------------------------------------------------
+Iteration  16
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1472
+
+---- diversity:  0.5
+---- Generated with seed: " he made. after 3 months, mitch was able"
+ he made. after 3 months, mitch was able dood and to the hove seors to the cork is the pass the golt and wand to the slanled and a tor lee hand os the sare. the costans i sote the reater i mew. the detle the insaring on her and and at was a
+
+---- diversity:  1.0
+---- Generated with seed: " he made. after 3 months, mitch was able"
+ he made. after 3 months, mitch was able amurs tarphan wood duvh on ceyed, u couth, he furted.
+cin tegs calk. dot to bome pyrruhtned wornilg counm to and ciath belirisit. the tann meoted he evenled mroved to nid to wane in becrise.
+anword i
+
+---- diversity:  1.2
+---- Generated with seed: " he made. after 3 months, mitch was able"
+ he made. after 3 months, mitch was ables iisher wors, ve habintirre old there had o goh pecult her. when
+any was heage,
+wo wanhed at fasugy was tutt. cendmy fend stoods weught wemey. soninn hanred her avinlibed he smols gappy, kike le the
+
+--------------------------------------------------
+Iteration  17
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1485
+
+---- diversity:  0.5
+---- Generated with seed: " and made me a scrumptious ham on rye.
+m"
+ and made me a scrumptious ham on rye.
+man was naved for he deoter was to maldle the sont to and the and was work on the to words the docto had was to get her a tate had met was op were docoron the tall on the worled and a tand. she pun to
+
+---- diversity:  1.0
+---- Generated with seed: " and made me a scrumptious ham on rye.
+m"
+ and made me a scrumptious ham on rye.
+mouted eptions sanfo to cho were sins soea.
+lomxher gufay biy desporented his o cat to chofce. she jond his hraraspy op gace to enegod a brielel wishor was hocad's furzed and riwtes and his hot. the wa
+
+---- diversity:  1.2
+---- Generated with seed: " and made me a scrumptious ham on rye.
+m"
+ and made me a scrumptious ham on rye.
+mreim. ganning for gop thit geam her oee. she natad. cancodton poarfevy frot, whepoan. the tordy the it. wiy edan boanith sorling to the wamtrong neols. povea. muving metpote was nagmyy pocogies a oltw
+
+--------------------------------------------------
+Iteration  18
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1394
+
+---- diversity:  0.5
+---- Generated with seed: "pop and a slap in the face. the guitar s"
+pop and a slap in the face. the guitar sirted her to tamed the solt he ipting to her was his to the fon wishalged watter pustten the bottangle the got and cowver tame the wisting. it the tor and bum fer as the betle fartand the tand her a b
+
+---- diversity:  1.0
+---- Generated with seed: "pop and a slap in the face. the guitar s"
+pop and a slap in the face. the guitar sadfescey he dant, when he ge. nery to the dead the snuwed pok cound amtalselclin mirm rao tol thore thair winlsmen he other and luwt ceose to utdaao tarlul. she asd cheute i eve batyy a bad lamed his
+
+---- diversity:  1.2
+---- Generated with seed: "pop and a slap in the face. the guitar s"
+pop and a slap in the face. the guitar spofite srinco
+t! she heande u
+baw. hinle op duvs theid akm. the efee toer. she pokhe cunalvet hirs oattrohy was benruoff wonluann ta or the wated decol. losy wathi bid. he har s oanry ,ecoe ox dainppe
+
+--------------------------------------------------
+Iteration  19
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1412
+
+---- diversity:  0.5
+---- Generated with seed: "ight behind him. gina was almost within "
+ight behind him. gina was almost within toe wors the be in her brate he and the tonle the yind her ton her wraet to do cork the furting sowh and poul stamer to the heuse bods the teir on a hoting and on the ten and bond her wimed for the ga
+
+---- diversity:  1.0
+---- Generated with seed: "ight behind him. gina was almost within "
+ight behind him. gina was almost within u wemle cemesisols for i hate aaticed her wolt hoed dean tad. bick, rinlsoit trang eltcurtleis for ank oper i he taseaar ig severlor. watlals on shop of her sinked. her sint. i moess i gow chow banran
+
+---- diversity:  1.2
+---- Generated with seed: "ight behind him. gina was almost within "
+ight behind him. gina was almost within over.
+been far bay oh afcad. pety mading of lroc wotael.
+hicut. get wong slet her oepon of rared aaopibrid cshasiw altrrer't hy pross large and ,ed ceyi. her hid with at yo was this gitbed is of locs
+
+--------------------------------------------------
+Iteration  20
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1609
+
+---- diversity:  0.5
+---- Generated with seed: "ood at chess. he challenged his friend t"
+ood at chess. he challenged his friend to she nented one in the and an a took to lad and snected and hais he to the she for in in when my have the neord on the cankre banty he has mind and wath he bowt fon the crilk unders dew the was so of
+
+---- diversity:  1.0
+---- Generated with seed: "ood at chess. he challenged his friend t"
+ood at chess. he challenged his friend tote and moteudiegod deviaey in scind mewant gacltrowame cut the kasy. powind she rasd tenyife indeb poosh cetromi magin at uby faut nasoss foviriln fos aod tod klarbhild. boqt wealhy bywsar weld ,ave
+
+---- diversity:  1.2
+---- Generated with seed: "ood at chess. he challenged his friend t"
+ood at chess. he challenged his friend the reedat, jos, moreder, he runkef ties nacall u foktiss. the pyy birtodthhoded endreitdoy.
+sruk kyad wom am, the dovised to werh darkms trunh. diog at. jurtoey ,efcriberans row bod hi galleed out he
+
+--------------------------------------------------
+Iteration  21
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.2035
+
+---- diversity:  0.5
+---- Generated with seed: "le.
+allie loved the store delias. she sh"
+le.
+allie loved the store delias. she shanred to her at. she a bapted bound to the sat wilty she ampared to so cuse so suws the to him frete one nucenir to hen a teot was and dond. he cook the wous dan to dath dopoon he as her and and onfis
+
+---- diversity:  1.0
+---- Generated with seed: "le.
+allie loved the store delias. she sh"
+le.
+allie loved the store delias. she she ans. giwned workilg. wo fos fuurse.
+asdaach. a ti for and lelpidy. the foind laear vome a law qaokad and hen hofilt. the mursuves soad oms and ho hagino's saky the gabhed to miiif courding satel foy
+
+---- diversity:  1.2
+---- Generated with seed: "le.
+allie loved the store delias. she sh"
+le.
+allie loved the store delias. she shabc walded lefcond jyold it al foyoaagly smat prarinle pot dogse foal's toals llodk the fro kugntd sound firkoir woy and nohf. tacynen botw a caccomsm mawt oh fegbasned tiseid fhiogy i criwl finive si
+
+--------------------------------------------------
+Iteration  22
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.1945
+
+---- diversity:  0.5
+---- Generated with seed: "e. i moved to the sofa instead.
+i order "
+e. i moved to the sofa instead.
+i order fer weuld sal he told amens the ties to the thete tand to his and at and the teold to a docd the there in to she the bear shas he peed to the wanded band she tind coter be was one a moccerer the dann
+
+---- diversity:  1.0
+---- Generated with seed: "e. i moved to the sofa instead.
+i order "
+e. i moved to the sofa instead.
+i order at pasd and ilto woride cy saed the sas'rs. i rosvy. her neatay to his. his to corkap! bouder igawerncor monhy has of in erre. aogerhhiviwed to smith. dobpaeg. rot to dirlnang chires haragis, aptmin g
+
+---- diversity:  1.2
+---- Generated with seed: "e. i moved to the sofa instead.
+i order "
+e. i moved to the sofa instead.
+i order iy the meonliced agorlalt porbing she. sesped the fe. hiten wand his heur that the bint. biclun baitm oy and tcey. fys an tect audfol glay a toetuda fauder
+thed at ic. a hobacganriee the sfoum. becire
+
+--------------------------------------------------
+Iteration  23
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.8985
+
+---- diversity:  0.5
+---- Generated with seed: "she wanted her tote bag to look like. sh"
+she wanted her tote bag to look like. she to toe to fan te the de dem s ol and he tose haet a the to as wer on oo the the at on a ehot art. the ut the the sf nater the snres the the ha therard fo hat hat haote an the tor wis the and beaol a
+
+---- diversity:  1.0
+---- Generated with seed: "she wanted her tote bag to look like. sh"
+she wanted her tote bag to look like. she ofved progs. thes a ocmeish en,ew evpiy ofd nepwiumh h sooon d7fid. musi das shiyennnedty wandp! hh ti dpisirrr fal cec hir ghktaekrei ut aaah 't goee mlapss me eud an dh lruganvii wamt hie. seteln
+
+---- diversity:  1.2
+---- Generated with seed: "she wanted her tote bag to look like. sh"
+she wanted her tote bag to look like. shate thoieloly ave me oat t giwtec. iw hiv. cireeli warc. jeto. e t taaanrhe tofscy sdver tisr. steednlisooy o lacpil thuss
+ofnauumeste, o tidedeisel  he goily.
+cikr olp herexwyd, sew.oa. helc hae ta f
+
+--------------------------------------------------
+Iteration  24
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 3.3553
+
+---- diversity:  0.5
+---- Generated with seed: "one had the kind of energy that he has. "
+one had the kind of energy that he has. an al wd o ses oy thi aadn pe het an be pa te to cas tu cen mis tording hit loe at of i being ber and. the rod to fo to t baw hed t tlr tod ce thed bomt tho hak then rred th  to w pim on did hal w an
+
+---- diversity:  1.0
+---- Generated with seed: "one had the kind of energy that he has. "
+one had the kind of energy that he has. son eoei nucomgsibt tan i. whymood tceren einnrgh hoon aiey ae slrata wad. bisei tel whan ed wo. ha toor rh.odlegt enee fhtsitt, m t das f arte. ot i riddoi farke efmirfydr ive crr mreramd andut. yibe
+
+---- diversity:  1.2
+---- Generated with seed: "one had the kind of energy that he has. "
+one had the kind of energy that he has. wnrsad .oo w amhc pex ssan dov choog acam hak..ri baus f dasahdt lan rne sratis cipe. cedyrkhdemh. wrolded s
+vphlidlnge tave tos feees iir lever  g  sineedye waitd.awg angn hacid migee.l. medac eovs n
+
+--------------------------------------------------
+Iteration  25
+Epoch 1/1
+176286/176286 [==============================] - 211s - loss: 3.3051
+
+---- diversity:  0.5
+---- Generated with seed: "for thanksgiving. this my first time try"
+for thanksgiving. this my first time try oa t t te we thas al se heno ho a thees te ene th ge erri oe th ti eento of me tac a sre roneaydr seo asd go toe l so the ho ti be son th  lod th te pint he tee a dud te tel gal bor da toede ea the y
+
+---- diversity:  1.0
+---- Generated with seed: "for thanksgiving. this my first time try"
+for thanksgiving. this my first time trytat nl.rh ie. bodd tan.e fee anw cr l do.l. her hotaaen ill buedt te raemh aa lo sisg. mo baf. .ae dlsklhanos t losd sgese hegede icd en mee ml sd odnm dhm heg briew di du tanlsyi ode acd hom n ahmlhr
+
+---- diversity:  1.2
+---- Generated with seed: "for thanksgiving. this my first time try"
+for thanksgiving. this my first time tryt ap rrel tsnhoud prh
+a the babsn leorty  gy fo ie waaen
+gitlmomm.s co tik.eafste unurkdk fumm of va.tarrotwm dilinaanos data..is is.ohaacd line d blise.oao oss ra bhlhaoer.ermhr.a as nh is a shen.im
+
+--------------------------------------------------
+Iteration  26
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.5858
+
+---- diversity:  0.5
+---- Generated with seed: "hbor.
+allie was failing science class. h"
+hbor.
+allie was failing science class. he to the and he to the shang the was she aften worn sant she dun she the her the tunk he to the the sre the gace so bod the on i ceed at an ot pant a tho the chard des on the rake bod a tors her hid i
+
+---- diversity:  1.0
+---- Generated with seed: "hbor.
+allie was failing science class. h"
+hbor.
+allie was failing science class. he atdparetdher the lel emt ity i to ni i taed. jreccep rre a. noe faaod. muy. ede tocr batme hod. she boiv. dais in a sirlharmy wholden the satep talc. o wheg pik the salw fathos ham thoy. his in sho 
+
+---- diversity:  1.2
+---- Generated with seed: "hbor.
+allie was failing science class. h"
+hbor.
+allie was failing science class. he pofshed ceufaim. thed beted tin wed deintdhen. in sher gornfttiwy. oc cep livsda
+ moyiz i hros, batnransssilrdtanm onn tha oaghwtlihed gos wirnhser olends fin argss she. the tuis kemaso. a amcpen je
+
+--------------------------------------------------
+Iteration  27
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.4198
+
+---- diversity:  0.5
+---- Generated with seed: "king at. suddenly, we saw a snake on our"
+king at. suddenly, we saw a snake on our reen thic and nas wanl wim crecs has to hotc to fiund mhn to bol tas she sor i share the lowted ats wud i wom the tite site wer pis con the in the stet the bascer a to tass has tot she to wirss his f
+
+---- diversity:  1.0
+---- Generated with seed: "king at. suddenly, we saw a snake on our"
+king at. suddenly, we saw a snake on our, darde thad wam og hicosile the a 'n't wtsl fatwashrn lebreced wec wrradve thim dadpmlaegy on detec ge'r. wherd brnwnpeund. fo. mead iatt to foe atsrayo tye oceccp him shopeiatt unerij toyk rripe bic
+
+---- diversity:  1.2
+---- Generated with seed: "king at. suddenly, we saw a snake on our"
+king at. suddenly, we saw a snake on our ark wolknt a posnnause. bhas huod.ypcgrecc hos epersec i t.ahs do. .e hes aydalirn
+avpylreolln brumri ad isn glitet id dot ofpapol savi mreccyudceg widihavicev laeged had hon sanved.
+an ipehteren hay
+
+--------------------------------------------------
+Iteration  28
+Epoch 1/1
+176286/176286 [==============================] - 212s - loss: 2.3027
+
+---- diversity:  0.5
+---- Generated with seed: "e chef didn't know what to make for this"
+e chef didn't know what to make for this the tuck the lonr park her race sass a cound his fase the tas we rer the tt he and roy hos fe the talk to se the nated a late a tat mank the dan to jon and to the bum a gery the tate the telt to cimb
+
+---- diversity:  1.0
+---- Generated with seed: "e chef didn't know what to make for this"
+e chef didn't know what to make for this's acehder. me divirged on pey we wiscmens droped gawced runry for orn niss birliwugae the coenutnon dop fet door cork clemare by ford wapr to a nopet the cool.
+her opalf deode in socing lrod theut we
+
+---- diversity:  1.2
+---- Generated with seed: "e chef didn't know what to make for this"
+e chef didn't know what to make for this tolcet
+rugganst oos a tig fight ateh chetr could fety and. the theot por ftcidriefs banred evar. iremimgiv at gaslanion. girghers. when iltrin, tusepof lyfhriutine molaod bastirl icroamats has posiwy
+
+--------------------------------------------------
+Iteration  29
+Epoch 1/1
+176286/176286 [==============================] - 210s - loss: 2.2464
+
+---- diversity:  0.5
+---- Generated with seed: "f college when he was young. he never to"
+f college when he was young. he never to find the wime. she woald the his on the the horle went enk of kord borde the bink lot on bon bit and the soasle to the tatting to a seet to she marfy the the talkher to the dics the for the was and t
+
+---- diversity:  1.0
+---- Generated with seed: "f college when he was young. he never to"
+f college when he was young. he never to her im. marly altody.
+icbocenlthew.
+theogy sike mebmafh timh ocy her.
+fettaek nupsi thog potbeagil her an in he tooe bebir. dung. he depi the sorpeh to.
+his aldew of were cawp faled the rod.
+he saf p
+
+---- diversity:  1.2
+---- Generated with seed: "f college when he was young. he never to"
+f college when he was young. he never toeleawtay srened de weralilt' enlansdtap rom. fabh as was nese tiesing hendaefs'p gat frairelys on sid hiciting. se soymobide the mod. murine. sornkifmk to her. coeyy i adds haid friurch. he seuctek ya
+
+--------------------------------------------------
+Iteration  30
+Epoch 1/1
+176286/176286 [==============================] - 209s - loss: 2.2254
+
+---- diversity:  0.5
+---- Generated with seed: "that he didn't made it, it's that everyo"
+that he didn't made it, it's that everyod the lirt his has beay she teund the wort the tame nanled the the bard. she moted the fabery. the motped her has she lod lided of the acontts the let the fer one a doing mebhaded to the and he tane a
+
+---- diversity:  1.0
+---- Generated with seed: "that he didn't made it, it's that everyo"
+that he didn't made it, it's that everyoce. dos.
+it oit the hew tows tham the umduudigad beek wisy wesy tir heels. he dadcide doestung, gidlers
+detmhimid a toike coilsos afencegei rrost bacl. wawl and five doands hosapo. bit miren whang ip
+
+---- diversity:  1.2
+---- Generated with seed: "that he didn't made it, it's that everyo"
+that he didn't made it, it's that everyo ciecs the. sotuded midorlby yhily besudy his woindden pannorc taettsr tadgubo! on fike hoantded his woem otted waml nadk!
+decived lons ood boce the munbes. honced mhyeintlet. os aw won diand tom he f

@@ -1,0 +1,664 @@
+Using TensorFlow backend.
+
+Reading text from data\roc_text_mid.txt
+
+Corpus Length: 104011
+Vocab Size: 50
+
+Dictionary Map: 8 | ,
+
+Number of sequences: 103971
+
+Vectorization...
+
+X: (103971, 40, 50)
+y: (103971, 50)
+
+Building Model...
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+lstm_1 (LSTM)                (None, 256)               314368
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 256)               0
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                12850
+_________________________________________________________________
+activation_1 (Activation)    (None, 50)                0
+=================================================================
+Total params: 327,218
+Trainable params: 327,218
+Non-trainable params: 0
+_________________________________________________________________
+None
+
+--------------------------------------------------
+Iteration  1
+Epoch 1/1
+2017-08-10 11:47:44.209160: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 11:47:44.209262: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 11:47:44.209336: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 11:47:44.209431: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 11:47:44.209504: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 11:47:44.209598: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 11:47:44.209685: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 11:47:44.209772: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 11:47:44.446498: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:940] Found device 0 with properties:
+name: GeForce GTX 970
+major: 5 minor: 2 memoryClockRate (GHz) 1.3165
+pciBusID 0000:01:00.0
+Total memory: 4.00GiB
+Free memory: 3.31GiB
+2017-08-10 11:47:44.446596: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:961] DMA: 0
+2017-08-10 11:47:44.447697: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:971] 0:   Y
+2017-08-10 11:47:44.448030: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0)
+2017-08-10 11:47:45.589141: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3159 get requests, put_count=2591 evicted_count=1000 eviction_rate=0.385951 and unsatisfied allocation rate=0.528015
+2017-08-10 11:47:45.589234: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 100 to 110
+   896/103971 [..............................] - ETA: 197s - loss: 4.53862017-08-10 11:47:45.956308: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3161 get requests, put_count=2702 evicted_count=1000 eviction_rate=0.370096 and unsatisfied allocation rate=0.466941
+2017-08-10 11:47:45.956376: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 193 to 212
+  1792/103971 [..............................] - ETA: 119s - loss: 3.99032017-08-10 11:47:46.335323: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3227 get requests, put_count=2964 evicted_count=1000 eviction_rate=0.337382 and unsatisfied allocation rate=0.401611
+2017-08-10 11:47:46.335406: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 372 to 409
+  3072/103971 [..............................] - ETA: 86s - loss: 3.71982017-08-10 11:47:46.870111: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3411 get requests, put_count=3693 evicted_count=1000 eviction_rate=0.270783 and unsatisfied allocation rate=0.233656
+2017-08-10 11:47:46.870205: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 871 to 958
+103971/103971 [==============================] - 44s - loss: 3.1341
+
+---- diversity:  0.5
+---- Generated with seed: " a bit frustrated at first but she never"
+ a bit frustrated at first but she neveri  ol n  je  ne n yee n  l t t n  l b l nne  n  n n f ty n y t  it n l y e n fee  y n l  n o n  t le  n n n nore n an     t n n ean   y  on n  nn n n   y   n p tin  n  ine  t  l  h u ni t  tl  yi n  t
+
+---- diversity:  1.0
+---- Generated with seed: " a bit frustrated at first but she never"
+ a bit frustrated at first but she neverf  seacif  tnefn te te m i r to ya dyon nia ob n  oteiairno  ntiyi ry  ne  y n oyunolya l nty nie l ile itte be  kioabl  nt, faeyon fey  y yyete j onia oyiny yl iy cenre hao  ye idn  ieobo r o t o hon
+
+---- diversity:  1.2
+---- Generated with seed: " a bit frustrated at first but she never"
+ a bit frustrated at first but she neveruait i atey he e ayd nabafotil li l eann naiwayuyraabyeno g.lt t ia,teeonyriafet  tiy at e lill fyit feawn.it fn e p yi fo  g  teroiioh fy.eyey lneae n tyel f lal n h   hu  ry iniljt yaboe ylab  sn n
+
+--------------------------------------------------
+Iteration  2
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0616
+
+---- diversity:  0.5
+---- Generated with seed: "picture with chase utley. it was amazing"
+picture with chase utley. it was amazingc lotcocttochtet  taosh gd s t thhat g tootd h h t wet hegodehac golantotghho tatottat th loonhth los c ht hh ohosach ct gth hhotacg n h t coh os tg hsh cadtoch  t hochh d ghoat ht t colotot  tch s th
+
+---- diversity:  1.0
+---- Generated with seed: "picture with chase utley. it was amazing"
+picture with chase utley. it was amazinghhacohah lalnshcfge ot nfghgtadhos oanrd cs gmwec htovtosar c aaffdad jnht oluwo .gchag kaf nghg l tlthc  cfaga.haohr s  icatdc tgtt nohecs vh s hglaofat htealthtoohh ln hht  trh  . fntodd dh tahotsol
+
+---- diversity:  1.2
+---- Generated with seed: "picture with chase utley. it was amazing"
+picture with chase utley. it was amazingcrhatohhioot.rag frhyabnogght tgihiold ns w wlehagh lalects,tswhow hwofhheheawdam teaego occlogtotawg ggh hc lngts nnaot gspr sroph.htatoalthsgongonthtlhhv ft lhphlgyhdhakanageacl woehto.lthgshtravklr
+
+--------------------------------------------------
+Iteration  3
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0586
+
+---- diversity:  0.5
+---- Generated with seed: "very year. one year, a major hurricane w"
+very year. one year, a major hurricane weeeeee seis s.eeapasaeuse seye seap soeueeee tseeepeuseuseeesw subousaweuwsyeeees amoeeapeupeeeuteedeeeuteeuute so seoeumuweeeeeeeeeas uutte peee seeee p waeeapussease pesueeewee paseyupee mee w weeea
+
+---- diversity:  1.0
+---- Generated with seed: "very year. one year, a major hurricane w"
+very year. one year, a major hurricane wa w s dobobthwty ut wesoy irgehaapa nhiweaadwwnaiwfsyeeoo wuteapece rv avree eeawboyweeauseaewmuapypa ut yeeyvrtsace rdseet wlpealsum mo weraasueee wunyas t ab d iupehuartar bessasesuseyabseeoeae vosa
+
+---- diversity:  1.2
+---- Generated with seed: "very year. one year, a major hurricane w"
+very year. one year, a major hurricane wwy um'cwsamo pgt trowtrnnt tvaetabkbmusyuusevus urtwyssbumeeaunotappa iysyihasrtaseusbesl ewa upsowbpsh wusasiaesasadug sd.apwcapeoee t .vbraiwuaweomupee w wabututewapteeebh pmsoseeseesfv yenweaplpibh
+
+--------------------------------------------------
+Iteration  4
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0581
+
+---- diversity:  0.5
+---- Generated with seed: " from his garden. but forgot he had no p"
+ from his garden. but forgot he had no pepeen  cn am e ee m nn c nnenca np c nsen   t nn  o   nvec nn nh me n  nn v    p p   t   nonn nnen n n ene nm  a rem n nen  nnnd  d  enne  ce nnnnnoeen  n   nnn n n nn menete t nnp cee    nn  m ren  n
+
+---- diversity:  1.0
+---- Generated with seed: " from his garden. but forgot he had no p"
+ from his garden. but forgot he had no pnkevhevemepevevepecnp
+lc nm ane s  ne covv ef ymw ln ip o v nute
+ nnn ne un  s uc a
+nf sois n
+b ndop ane  s oedsoc c nnne avea   osr pece set mc c  t.  v   t fet npes ace es f nnedeeeueenmretne c sh
+
+---- diversity:  1.2
+---- Generated with seed: " from his garden. but forgot he had no p"
+ from his garden. but forgot he had no pp   apc r. ede eant
+owttanhe afen  d neo so s anv
+upe geer bepamocu d niomfepe ieeumensuscn tmnn
+eenn skels
+nobep p d
+send dev
+m num d rof mhn efnod lse nfe nahidofmecepnept u kt av meery aejci nno r,
+
+--------------------------------------------------
+Iteration  5
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0575
+
+---- diversity:  0.5
+---- Generated with seed: "who answered was kind and understanding."
+who answered was kind and understanding.leoalo feo meo   oloeo noaloalol m po lel ole oolaoopoam l ml l l moo umolololoaloealanl t ll lol elooe olol mas n
+ eeelo lo nalem nool  looolo m no  l lalelooono lea  l looole noole loloolla leooeolo
+
+---- diversity:  1.0
+---- Generated with seed: "who answered was kind and understanding."
+who answered was kind and understanding.leoee toaoeeooll am laon
+be a k
+ll
+lloyoae  in meoeoalooaaliyo sle
+loill   lounoalhsatt .al teo  ho srooll a afam ,elolyeo oa llall eleiyal mpo tl rot gol unl  a. ml
+loot t l s mlmoeol aal
+onaalooee t
+
+---- diversity:  1.2
+---- Generated with seed: "who answered was kind and understanding."
+who answered was kind and understanding.ameoit  lln ovnleu nsnt
+aolea lt aul
+l the a ll,tealveo tilaneim meh eilo meo os
+tl m
+le oo   lama pllosnosgamhuhbnl l neo'as d aunol nasnohrei noeeenood tae   wee al otooavlo f r eyealetl oayv eipup
+
+--------------------------------------------------
+Iteration  6
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0577
+
+---- diversity:  0.5
+---- Generated with seed: " magician at a birthday party. billy was"
+ magician at a birthday party. billy waseesereseeeseseree seees.eee seee seeseereeeereese seeeseeeereeesee ese see seeeseeeees.eeres e seeesee reeeseeeeseeseaseeeseeeeese  reeeer seseeeeseeeseeaereeeeseeees seeee   eseeehemeeees s se iseese
+
+---- diversity:  1.0
+---- Generated with seed: " magician at a birthday party. billy was"
+ magician at a birthday party. billy wasw eees .  he  vemnemee tenisese meeaph.eero akelk seeehereekuesslseesa s see ceer e srse  eb eg
+s  esephhitwee ree t marosres  h sestmeaeer'se eeals seikesol  ie. srneb n iweeehr me   r sereaseerc i r
+
+---- diversity:  1.2
+---- Generated with seed: " magician at a birthday party. billy was"
+ magician at a birthday party. billy wasrr ser he. adpaseows eeb rearbr l ai s kotueese meemeh ts.er  nssergsaeec me canrheeuh css lereils s.lssye eve u em sehe.ed..e  we e...iseeesee anrpw mrm.eedfeee.ee t.aey.ee sseuceeaeesee.rv rer  eoes
+
+--------------------------------------------------
+Iteration  7
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0584
+
+---- diversity:  0.5
+---- Generated with seed: "y of them or what they offered. one day "
+char_roc.py:16: RuntimeWarning: divide by zero encountered in log
+  preds = np.log(preds) / temperature
+y of them or what they offered. one day en ne e      e ent w weet  lete  te e  eeeete    te n t e eene  t.eeeet   eete   teteeetei      t  de ew  t te ene etetete   ee t   eeweete enet e ereet  t n  te  . t ten een  t    s   tete   t   te e
+
+---- diversity:  1.0
+---- Generated with seed: "y of them or what they offered. one day "
+y of them or what they offered. one day   b .ed n w tclje  dede te tuiost n eoaksenee tan ni  s.  tkee ew  r ceecl  as wnn tteweese. eenebhne   r iw p t asensse e  . t tnnsehotetenos  eat me t,d i ee d te nde aan n t et. s wi w erem.ee d tc
+
+---- diversity:  1.2
+---- Generated with seed: "y of them or what they offered. one day "
+y of them or what they offered. one day nn n f
+ verer hnetegel rrin n  too  i e nh nnfeo udeew  nete w  te.eel,  teietol. l leeeb ebtep s  peg t  tet terrn  e  cee  tket  etdw nnterereet s d.ew ref n nebonle h nher  rrtekaw t t r   dt e et
+
+--------------------------------------------------
+Iteration  8
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0587
+
+---- diversity:  0.5
+---- Generated with seed: "iced it was missing from her finger! lis"
+iced it was missing from her finger! lisiriateiitiaailititiatei taatiitiutatatiteinaiuhatetatiteutaiatitiatiatiiatiatataatiiteiiiatateiatat.eatit.eataitititatitattautiatiteititei tititaiuitatt atititatiea.iitatatiatiutteititiiteatiaiiaaaiai
+
+---- diversity:  1.0
+---- Generated with seed: "iced it was missing from her finger! lis"
+iced it was missing from her finger! liselahigeitiaaiwoeiyiiiiauginr.uigutaheat.ithiuiaotaatiaet.vihhhiuatiaaun tiarolitii.ieataah.anauat i aniatiitititeiatatiilioliratitaetatitirotee. nihteattaoiotamiauiadieroeaasicieu titacheiiat.eeatiite
+
+---- diversity:  1.2
+---- Generated with seed: "iced it was missing from her finger! lis"
+iced it was missing from her finger! lisiya cagcgaaavfias
+s.ti ninacikitutt iteurat teirieiiatit.hueiweacatigiiruwliihauli.i..iuoatti golta'utitanbi taitggee.iiteeitiakatuiibeatut. niecviranymeotugaeiap hteaatc..iateaitit,aaiinitih ugaeerae
+
+--------------------------------------------------
+Iteration  9
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0566
+
+---- diversity:  0.5
+---- Generated with seed: " to be able to dunk a basketball. i can "
+ to be able to dunk a basketball. i can eeepeeeea toe peeheee te lee ceee oeeseeeeeeeeeeoeeegee ecoeeee eeiteeeeeeeeehseeooteeee neeeeeeeheeeteeeeeeee i seeeee eo eeeeeeeeeseoeeeeeigeeeeeee goeeeeeee  e teeeeeeeee te teeeeeeeseeeete pe teee
+
+---- diversity:  1.0
+---- Generated with seed: " to be able to dunk a basketball. i can "
+ to be able to dunk a basketball. i can egeo w nesetle de t loo c,oda etoseoecs cteeaiiiseicdgdateatteeoahe negte atplatf eolheoeoohnaae eyee bee laeeospt efeigs oimleengeen e geeeet te t
+tatoletle leaemh esoeaiggdeeet eet
+ poceoheeyehooheh
+
+---- diversity:  1.2
+---- Generated with seed: " to be able to dunk a basketball. i can "
+ to be able to dunk a basketball. i can g oig dceo ,e ce.s eds egaech'sg empeitigli gose t eo det ci oveeo 'atepte eacbophuchutaepme hnoceiteil adseeibe eaheigeoilasao etateosidltugpeoeeetaot   oneeeonee  aasedge c giiwpiceahel istse'hoe  o
+
+--------------------------------------------------
+Iteration  10
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0632
+
+---- diversity:  0.5
+---- Generated with seed: "nged her mind. ray decided he did not tr"
+nged her mind. ray decided he did not tr g te  t.    o  g           t   te   p   t     s at      p    a        t    g     p           i        i     t t i     p i .       i     t t   p                e  t e        ..e    s   g  g   t t  g
+
+---- diversity:  1.0
+---- Generated with seed: "nged her mind. ray decided he did not tr"
+nged her mind. ray decided he did not tr   ci et.     eg   ett htilise i    d i tephet.  t p w t eep d h g te  t  rateg k aidh  paa  t    reif fauh i  s p ensier  h ,eiets t te f n op t is.   pa.. rsatoa    vt pseep p s d l  ri    h  to tia
+
+---- diversity:  1.2
+---- Generated with seed: "nged her mind. ray decided he did not tr"
+nged her mind. ray decided he did not trp as te d teaseeo hes dtn  etaigopaogt  g  g ste. nprhsofr toii ader  heteen  .et as  ifle rsig t r ce ype ageh aae pgi. ig regos p .o tpegh teegusp tp. gt enrtgi r tga s   t. s.dedoo.p.ie as kir  en
+
+--------------------------------------------------
+Iteration  11
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0606
+
+---- diversity:  0.5
+---- Generated with seed: "me other kids. tom had lied to gary.
+jos"
+me other kids. tom had lied to gary.
+joseveereeeeveveedeeirereeveeerevetereeerereroverevederev viverereeeseaaveete eerevererevereeveveereereer aveevedeeveererehereretoveve vereeveerereeteveveevedeteveerivereterrer erev eeveevereeareveer ree
+
+---- diversity:  1.0
+---- Generated with seed: "me other kids. tom had lied to gary.
+jos"
+me other kids. tom had lied to gary.
+joseerer eeduwettutliit svreleveedeh ereedvowamheheo veorhenvveoseev teteiuveeroieevueveutnevreerheueheteor tawvherdrvhi seouvebriweetiuheverieor veseea vmteveav dod toveeerrreeavece eeml er hearseereies
+
+---- diversity:  1.2
+---- Generated with seed: "me other kids. tom had lied to gary.
+jos"
+me other kids. tom had lied to gary.
+josdtetdeureettr.ek vehehditnfeiodaesoes toe w dre.ee ersebereveheodegevreodibeteuiv  e tprovoiara.ihbhesievheuesarrtrvetoietr.ed ev owed ervv trnee vetirteveesibeuk.hvderiheh cureidereireiuhoatev c rrde
+
+--------------------------------------------------
+Iteration  12
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0611
+
+---- diversity:  0.5
+---- Generated with seed: " bored, she told jokes and performed tri"
+ bored, she told jokes and performed tri eeaeeeee eeeee ceeeeheeee heeeeeeee eeeeee eeeee eeeeeeeee eeeeeheeeee eee he eeeeeeeeheeeeeeeeieeeeee e eeh eeeeeeeeeeeeeee e eee ee eeeeeeeeeeee eeeeeeeee hee eeeeeeeeeeeeeeeee hee  ceeeeeeeeeeeehe
+
+---- diversity:  1.0
+---- Generated with seed: " bored, she told jokes and performed tri"
+ bored, she told jokes and performed triehein  e ya cackeeeeeuu hee ee ee epleeehhehyiufeee h she e nh  e ukecyef e eeeneeeeeeuee reeceurooeeeetn heeee eeunkeee e ehue eheteeeiyeee ee e,ue .eeeie ruceau uieeeea keee  nh picseaceree.se eeceu
+
+---- diversity:  1.2
+---- Generated with seed: " bored, she told jokes and performed tri"
+ bored, she told jokes and performed tri yeeeecheeehenceugdteeu  ee eeii otcut eeuueesneuseangeeeceeuyefar ihoceeeudeearkmeige  mucsel eeecnhin ibef urye eyapta c n cecreeokeycee cleheeanehuh yee oeyfaoannse hseideerue ehrhharp ceeewsneheey
+
+--------------------------------------------------
+Iteration  13
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0638
+
+---- diversity:  0.5
+---- Generated with seed: " and the parking lot was nuts. we circle"
+ and the parking lot was nuts. we circleu  e   r u    u uu u     uuu ut       uu h       u  d    u u  r   d uut u  u  uu  u          u u   r r  uu u   m u  u l  u  uuu   u  m r uuu  luuu rur  u r u uu   mu   e u    u   u uuc  uu   u u  u  u
+
+---- diversity:  1.0
+---- Generated with seed: " and the parking lot was nuts. we circle"
+ and the parking lot was nuts. we circleu   r r  rudwe uu r uy u p ut uteu uns.ruue r u u  urud rned uf un    t t l  g l uu ula uu h hu di r  ut   uc hug  r tu kuw us d ur  a uuieug   umu tlus vel d r us ueuv u   ftu r uu uur ul r g uul e u
+
+---- diversity:  1.2
+---- Generated with seed: " and the parking lot was nuts. we circle"
+ and the parking lot was nuts. we circleecn trr  ud uceuutucuu cd eut  goau , eudguul uetu uugltuu tartuteef err n luvl fn urlul    uuuus ugg h l v um   ur cw  ul  vum uut ud uyhp mor aniruu g u u miuut  t lucruuu hl ic   vuut u  re
+ nvhg
+
+--------------------------------------------------
+Iteration  14
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0624
+
+---- diversity:  0.5
+---- Generated with seed: "e would visit them. every year, claudett"
+e would visit them. every year, claudettataaacidadahahaicaaaaataabacafaaahhaah hcaiaatamaam iiaraaaaaa faahacataaaaachiataaaattaaahahhaacaaaaatataaat lhaaattaathiaah caahaaaacaaaachhataatacaaataaallhaa atahatacaoc h tahafaaaalaaataacaatataa
+
+---- diversity:  1.0
+---- Generated with seed: "e would visit them. every year, claudett"
+e would visit them. every year, claudettaamrtammaophaltadaiacahathgamhmaaaadadhahhatllop hrotaaddaaceducodeolbaardearaacal salatvishoauoc
+taltdimashrtchhaheasid alateathihphhta t aoathear m d alohiataamhahacatthayhafach thit lmlaidhitaamaea
+
+---- diversity:  1.2
+---- Generated with seed: "e would visit them. every year, claudett"
+e would visit them. every year, claudettaoaataahlalicmtlcob a tteahaah d.im mhhlhiaaaaaalhyeiachaawceamthemotivifimave lathaaafoch hahiaat aihayhciahmafepjidapdlan   tac ttaaas dhaihmaladlbhahlomlinjoptaltatav mhadahg tharcy clh atamtlceher
+
+--------------------------------------------------
+Iteration  15
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0599
+
+---- diversity:  0.5
+---- Generated with seed: "ht as they sat down to start the movie, "
+ht as they sat down to start the movie, weowonhtot w w weheuw wew hhowe ew wewiw ww whowhhowten hohtewehow s hwetthowwewehethwhewehepeh w weewowwhewtetsteth w wewewwehew. weiwwtehowewwtewhowfetowon tow wewenwewh wehwweawetet wew webehh w wo
+
+---- diversity:  1.0
+---- Generated with seed: "ht as they sat down to start the movie, "
+ht as they sat down to start the movie, l ownohheow hneeonwhyolhhe owwewghhn whw nweheetowohhoewlewhhewwdohrwhodeww etehotehowewpoangow powoenhlocreydnhuswofobenw hhwh.iwehuen w waos hiwawwwityephhe t aawaothehwepenw hteww.hhahwwewrhiwhe r
+
+---- diversity:  1.2
+---- Generated with seed: "ht as they sat down to start the movie, "
+ht as they sat down to start the movie, nsuwabootekwhh wdhalfwhdlnhowhgowohwtt
+wintofs w lhhereewyes owoowihhs,h tbpowhhhf kbtwfhwawbetawhwosn wione wenh wkeiwcwoawuveewpopeothtpsh nt cyybntweblnoteshdonenn nw c nneaotr yewheotehowdpethdwwh
+
+--------------------------------------------------
+Iteration  16
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0626
+
+---- diversity:  0.5
+---- Generated with seed: " grow a whole inch. and within one year "
+ grow a whole inch. and within one year fdadadansnnnn nndlddaddenn  ddalndrinnanaad denndennn d na dad denndeded ad nd  dada d d  d d nndanvann d  nnd n ded  nninnd  nnannnd ddr deda sd dended nod d d d daad na nnnnn d dasndandadandeded d n
+
+---- diversity:  1.0
+---- Generated with seed: " grow a whole inch. and within one year "
+ grow a whole inch. and within one year yad sdennddredn pble ddes acndf iniw dannnd naandededoaahadenns.gddhdfdnndnwr an deeu wwiladnnonndhhawhaldea nnd shsay d nesd
+e nf.rdlmnnrnheswaededann rha pannm nfe nann m dhndwan ldenfige headlhe n
+
+---- diversity:  1.2
+---- Generated with seed: " grow a whole inch. and within one year "
+ grow a whole inch. and within one year nwd d ldr een ieledh eundadasds ffhhd nsaye,ceaabedtadedandsfler.nnnnneadodlidhoo. nrnnwkedcyennn dr danhdegd gisd.heafen ns.id r dalaw ehwandaaindasgafnfarnnadand.ahfass rasnnsdhedecasdtenndodaansadd
+
+--------------------------------------------------
+Iteration  17
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0601
+
+---- diversity:  0.5
+---- Generated with seed: "ouldn't turn over. i took my alternator "
+ouldn't turn over. i took my alternator tt t t tut etet ted cud tet tetetet t ut  utett ttded tetidat t tet  utettewtute ttatettltentet t t teidetitatetodut t tt tt tet tut tetutt t  tutetet ttitettutitetittetsettetut tt t tet tit teteti de
+
+---- diversity:  1.0
+---- Generated with seed: "ouldn't turn over. i took my alternator "
+ouldn't turn over. i took my alternator t s utd tad ft w  tgucttitdbtude t.ductdi t inrwespttewu  detoteu erot de unwa tddteaosatunte teteewedem  tt vit dactte ctitpettentuktad thietntutendd iptoteruateptt,dtetewutet aytiwerstauttvd dtieoee
+
+---- diversity:  1.2
+---- Generated with seed: "ouldn't turn over. i took my alternator "
+ouldn't turn over. i took my alternator d ttuwu dt sifttrnita eludtcg tulcl.ctneat dseurfluytt drtoo rwincultalt 'waemtsfedid ud gehtitlewe  r nild iutytsehdraut ctttitatletiwtcuaulsu uw ewitilitt tshit weot tev t un,iclditktk cv artedit uw
+
+--------------------------------------------------
+Iteration  18
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0636
+
+---- diversity:  0.5
+---- Generated with seed: "answer to turn the situation around. mik"
+answer to turn the situation around. mik    tr ahip r etire ar m  thaegat t a py  ne g   f taw y fraf gay aab tag k    rk ye bd  paraarit p y y pak t l  aap yy haatoh   p t r ar at t r y ap ir r p ay y y thap tauyy  lanp t y y  ifiay r a k
+
+---- diversity:  1.0
+---- Generated with seed: "answer to turn the situation around. mik"
+answer to turn the situation around. miknth,tud  tlu  h pahe aap ai n aset dutikh d il yfhatwhiwhekiitraenagyp lkory pha it aplhig fy jdd urif. u  'k g lkp sa munpke aleelrkp ap gd  eyh yyy  pyuabtpekoiot kpyiy og  ntl datahyeyteie  rny.hoo
+
+---- diversity:  1.2
+---- Generated with seed: "answer to turn the situation around. mik"
+answer to turn the situation around. mikk nit. nik y nohka on n yealaratp yeyr,lfrklokoat bt  dkp mid oal  apyyliw homyakita furata yyaogiy tyytoyyg ta yukrkg wr icy  arer   htheyetnya ti yheygydyh nn ndkaearg yup afedtiu rid ndyrc y phunan
+
+--------------------------------------------------
+Iteration  19
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0675
+
+---- diversity:  0.5
+---- Generated with seed: "e job and felt so alone.
+i had to replac"
+e job and felt so alone.
+i had to replac c r c cere        e i   c    c c c wi c w   d c c ce c c cc   c  cee        r  cee  c  b  c     c r ce c   t  c w    er r ei c de c  c c    ce    t t ic      ce c t     r r r      w     l  d  c c  c
+
+---- diversity:  1.0
+---- Generated with seed: "e job and felt so alone.
+i had to replac"
+e job and felt so alone.
+i had to replac    crr cirridr tgc  t cic c  b ee  cirhd e c  c re  u  w de c b  geer  g  w ric r br c  d    r dee b. t t.      . i ece r wee te    t c cic r   eh wraeic beceec   c near  ecte br  gic d ce  t  t  tc
+
+---- diversity:  1.2
+---- Generated with seed: "e job and felt so alone.
+i had to replac"
+e job and felt so alone.
+i had to replac mcre w.  re r wr.ier r ce r r tk  nr te c sce bwrew   cd ceidoe l cita ec rymiwg w d ve rab er ioeaf wd tecr cp d enrbubr e w ea d ibr  riorcecpiw  c e .c ci  r.rw cicacded w. m ir ciw w erlrdtw  v..
+
+--------------------------------------------------
+Iteration  20
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0621
+
+---- diversity:  0.5
+---- Generated with seed: "d fed it. it flourished happily in its n"
+d fed it. it flourished happily in its nheteh tet f t  t eh fhethehhet h m t fh s s t te d ethetees t th t thefahet. nn f teote  t  f ht hh hh t  f  tthe t  hhte f  th fesh ssh p   s sehet s t t ff ft thet tenthem ttet te  te fhet et ash f
+
+---- diversity:  1.0
+---- Generated with seed: "d fed it. it flourished happily in its n"
+d fed it. it flourished happily in its nrht es fh d rotep or f sheteteonpit ttvte . potete fe g etut f t totehe t  hto  tgtihhhemefh t .ep t nhhtet  ten  t fetohhttheefmr sfahh ahfhegtotosh temghhnhefh hehhevi s   asf uh'f st
+thnecet. ref s
+
+---- diversity:  1.2
+---- Generated with seed: "d fed it. it flourished happily in its n"
+d fed it. it flourished happily in its nta e hewehptt hhhgtu tdheftrswpfedif.heserhetiv flerdevv f tep pgavmn mhersot moanmoth cu.tewp'e  r vehvgk  s oftswemhf sf ttip.smotepta dh rrheshec  fhrhtte thoe' fhhesthanemfofetoshe.. tetoteg whhog
+
+--------------------------------------------------
+Iteration  21
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0630
+
+---- diversity:  0.5
+---- Generated with seed: "e guitar. she asked her dad to take her "
+e guitar. she asked her dad to take her afdea eatr dheaaaanradedehaaadederbedaedemedberatebeheebeteyarad e naderratebleadedeedekdenb elbarfasreeaatedehanradedetetefrtesar edeederreeatahetebeeaehereheerrabndedaafabeebaaareaerhebeeredeaaredee
+
+---- diversity:  1.0
+---- Generated with seed: "e guitar. she asked her dad to take her "
+e guitar. she asked her dad to take her  renowaaaghailetlerde  tedleheytatyhefra dinterrheabaragheadsaabakmaabth.eftrhyreatadhhhenmer dsowy  agdearebedbotel ry,egrehsenah  maaheyemh easateadameannendeb nm eahe lhebyehseyartennh
+dab nyeehyet
+
+---- diversity:  1.2
+---- Generated with seed: "e guitar. she asked her dad to take her "
+e guitar. she asked her dad to take her hihefanayadhbebedrdkeuar pdosewwar paaraf dnhpardsb abceiftdadteyrhryedrensrmr lm
+rtmabdetpaby.ede lteeaiedthdrayy nbrufrner ehh htuldehehttllaa,abyd fyanbbh raenaemebo lnrwatenfdat
+rctoo hlameraceder
+
+--------------------------------------------------
+Iteration  22
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0603
+
+---- diversity:  0.5
+---- Generated with seed: "uthor.
+kyle's school was having a big bo"
+uthor.
+kyle's school was having a big bo n  n n wan a f n iaf  an n  an f f nna  faan af    n n n f   at n     n    an n   ns   n ta   f nt n   w   n  nt n n fafg n an n a n naf t   g n  t f n w f t  an na   f   f n   n nan n yafa f  a n n
+
+---- diversity:  1.0
+---- Generated with seed: "uthor.
+kyle's school was having a big bo"
+uthor.
+kyle's school was having a big bogua aanen nsr niogifonof nay,n. anf  nafinaioyi n anenanc aawn.e n af n  a l anfncn
+a f h n sownotnwaa na n nnan  fad  a  an n sif on  an h   py ni ntantif a  if  faan  nl faw edf i .ofaat telacrtan n
+
+---- diversity:  1.2
+---- Generated with seed: "uthor.
+kyle's school was having a big bo"
+uthor.
+kyle's school was having a big bo fo   .o a afnhinrn fawew h.a ..ii f ntnt bo   gs a an ien  nada faator fic.lff sew ibannpeygeoof .wg a eg tferafid w.e s  loet wein k nwoyiwann aa nn t fntaisli  nchh na nf hf ftoasaaiiso ry fisna as
+
+--------------------------------------------------
+Iteration  23
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0655
+
+---- diversity:  0.5
+---- Generated with seed: "a guest.
+jared had a piano. he wanted to"
+a guest.
+jared had a piano. he wanted to   n n n   n n n n n n n n n  no n n n n  n no   ad n n n n t ne   n  n  n ne n m g n n  n una n  n n     n nn n  n no n n  in n n  n no n  n nan d  n  neno n n ne   no n n   n n n na  n nu  n n  n n
+
+---- diversity:  1.0
+---- Generated with seed: "a guest.
+jared had a piano. he wanted to"
+a guest.
+jared had a piano. he wanted to  d,n    iedoic   n,ehduguon u n n ua ,,  ee anic no g nag,  n   en nean ean no n  a n krtd,e nmn n  ner, n e fg h  ra  eoennon n  f.ann on.nane n fo  n n  w  tha nuo c an  ri n w a d ehuce , t  aihaw
+
+---- diversity:  1.2
+---- Generated with seed: "a guest.
+jared had a piano. he wanted to"
+a guest.
+jared had a piano. he wanted toteamnhe  ca f n nn tmwrreren, a rddr neg ee snauyonar d dloc puuge n  w dh c d gv n ,a, nloredr gnawado   n enahin n hedn w cos in nad nergi  pu ne db  ngoan nyud,giu p de   uobacoun  c nr n,an aannko
+
+--------------------------------------------------
+Iteration  24
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0619
+
+---- diversity:  0.5
+---- Generated with seed: "st. carol had easily passed her test! sh"
+st. carol had easily passed her test! shew,erfeeefid refrerere  reefewlererled lrtrreref feferir irere rirelrirrerer odrlererrefewerefeerowederearrrer relcereoereteferrlrerifelaofe la f fefrrewe eee rerel ewr relwedereewideeferer igefcewere
+
+---- diversity:  1.0
+---- Generated with seed: "st. carol had easily passed her test! sh"
+st. carol had easily passed her test! shf yiklef  fiar,rweicd he tife awe eoo eafy hlyerfeeie
+y gower d kfer,ilydiefewr dlaiaeerelcec  a l fyh  deykt g erlafeoro
+reeecelecwordhr eg  yy iyowesere,ire tifre r gfeluwe orird fd rgirha f rr,erel
+
+---- diversity:  1.2
+---- Generated with seed: "st. carol had easily passed her test! sh"
+st. carol had easily passed her test! sh frlhaweah, wejbig  tivyrraergebawegkodpewlf genrot ret s,a
+s ii u,ewtteerefew w laglirciflaw grewtosr s,frr dwyhrogr
+hiicie r  wrenontl efo gray
+l ggrehap,ar rweif.ie w td llr,,i ghihrt far,tad rews
+
+--------------------------------------------------
+Iteration  25
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0647
+
+---- diversity:  0.5
+---- Generated with seed: "t owe anything. someone else had already"
+t owe anything. someone else had alreadyhrlrrorrroreflrr let,lrrrrrrrofer rotrrilkrrkhtimltromerkrrror
+flrorrrr rtlrrrotrrmekr ter titrrtroletelrerkelorrowirowlretrrrtrrer mtr lrmrrer mromolorortarel
+rlrr rrrr llorrretreremmrklrirkerr tawlr
+
+---- diversity:  1.0
+---- Generated with seed: "t owe anything. someone else had already"
+t owe anything. someone else had alreadyrkurk rk,lft trrowre,kdnl, srl,lotlhrrtl korreclfkeewktel mokirkr
+rnk,igomrrrtmruforrpemerltirlkrcawfwlhearkukkreg,h.rwrk urtiketlwoarlhrt frkkrtomeftrimmkwt p wh'r,inorckr rr mowtwmemlml
+rlltg rehtrr
+
+---- diversity:  1.2
+---- Generated with seed: "t owe anything. someone else had already"
+t owe anything. someone else had alreadyemlmeulfcrelutreilc. raw rtram eserrer,fh.avflwtritaltr,.emisoerrooorlw.rke tamsnwownh r m  ktlec ucikrhcfmmrehnwom kcueremkrlefolhmhhhwuml wrnfotoweraubwmkmf,nrrtwerlomlln
+rer
+rleutjlrll'tlefseteplor
+
+--------------------------------------------------
+Iteration  26
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0604
+
+---- diversity:  0.5
+---- Generated with seed: "ippy and learned to use a leash.
+amy had"
+ippy and learned to use a leash.
+amy had wredsodeefetrdf.afed daur deddesed.a.edatrerepaddderededeedud dacentlapehana nred difateatedefih de deadf dedendad daetdetidediteedrhiadaa d d nraaudhaadeer f.ideadeedeudedatereuf t deed dr.itededade
+
+---- diversity:  1.0
+---- Generated with seed: "ippy and learned to use a leash.
+amy had"
+ippy and learned to use a leash.
+amy hadataanfi grih fuwolarirh
+ed..iwd dn eot..ecleded r.aht,raderiidulee,ceeue dt  etef ne riauddeaddemrt luweled.apem hilhdiunadew ddaytef d.ewinmanaanr.pus taderari frawifd .edet .raderen refgiltif  me da
+
+---- diversity:  1.2
+---- Generated with seed: "ippy and learned to use a leash.
+amy had"
+ippy and learned to use a leash.
+amy hadiditn wa tent.eah fdddetefadoodydf,t rafadadeved. wyw jldrenrhrnt
+ued tutdgrirap r.lranoudeimaddikaepoad lharinieawel reterulisktah seddsddrf.awtuh euwe dyedrlym.dahafh tef t.aptedime regeeuntfialh.dn
+
+--------------------------------------------------
+Iteration  27
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0629
+
+---- diversity:  0.5
+---- Generated with seed: "ugh money. after earning enough money, s"
+ugh money. after earning enough money, se ddedh d dd de d d fp dedod.edeedd d d ded sedd ddepd ded ddeopedded d p  d d ded d d dd p dedde dedh d oed thoseded pededeoded d  ddeded pedeed dd d d.ed d d p  d d dd d. d ddiced d . depep d te dde
+
+---- diversity:  1.0
+---- Generated with seed: "ugh money. after earning enough money, s"
+ugh money. after earning enough money, s p up.rop pe dp ddebedh t .doped  h hpy.h eedapdecdaudapt.h.ep dyeh.cedeoadeeech.h te deadkhehddedpibodipuby teucopdas.ddhudedpopr d eppdp di c apedk.sdd dddcucsprgsodd .oded dahospedyed dahh ahasptop
+
+---- diversity:  1.2
+---- Generated with seed: "ugh money. after earning enough money, s"
+ugh money. after earning enough money, su daded.defyee puvd d.ndpd todddeadyeh d.ep pdgepu p . penhed.edif d tnd egd.eddodeyo bhdhobede'cenlpdhde. yode dd wuddaf h. phdadrh add y  dpcrdrsdddpepheoph.op pp i s p
+c.udhl de.eh  epuf ythecrop.e
+
+--------------------------------------------------
+Iteration  28
+Epoch 1/1
+103971/103971 [==============================] - 43s - loss: 3.0645
+
+---- diversity:  0.5
+---- Generated with seed: "d invaded their meal.
+jadon was a very g"
+d invaded their meal.
+jadon was a very gotawowowoto.iw d t wolwoww liw.wdd wow w w wowwigowiwwotowitetaw lwototslawotwl wdil rowot yotowowagtiwot dowiwitidei tow ldiwow odowotd wowwohowawyeltow d woldiwiwwiwit w dddwgotodawowodiwowotoweddwt
+
+---- diversity:  1.0
+---- Generated with seed: "d invaded their meal.
+jadon was a very g"
+d invaded their meal.
+jadon was a very g yowod tewist dwal ytit daiwarnt nryrowhoheonttewiww owl wocugam t daiwodyiohgitrew attiwiidraodwobdiwryilow.  dladtlrorgrttiwrdrthiwtldldeorawrwoiwawtry cowtdaddew yoor dowigwdgd dw gsawsiw gw
+thwlei
+
+---- diversity:  1.2
+---- Generated with seed: "d invaded their meal.
+jadon was a very g"
+d invaded their meal.
+jadon was a very gon w.opowrwddyoofkitlagawtodm dtw lcgosat ddiwalaldaaahwdd cdowitdygiyiyaclhedogedadowsoitbl pded polgididdr.dlt odold.fato odot.oaditwitcdcawfchowetwt.worwywhidlt,w.eui
+doada w roctgryowd ootowcdowow
+
+--------------------------------------------------
+Iteration  29
+Epoch 1/1
+103971/103971 [==============================] - 47s - loss: 3.0621
+
+---- diversity:  0.5
+---- Generated with seed: "
+i got on the sled at the top of the hil"
+
+i got on the sled at the top of the hil   d  t.iaiuauai waw tat d aut a ow sgiit    iu   i t dut taar un   asiit  w a liw iati uta dat awau tode t d  as  u ow  raw iw   gaiit ut l   ite   s aa  d  t awaat y ad otatitit i   l  t ar t autiut
+
+---- diversity:  1.0
+---- Generated with seed: "
+i got on the sled at the top of the hil"
+
+i got on the sled at the top of the hilowt liis tiy d  wiralt.wou d  t c ib.yr ltato at t bid tye  iwiaasitawet llh aiway  t checag uiat td oit  iw    o s  tx as w. liy s aeyl g lyiwa t uw sgt uselartri a agute uglamewi iauut  daiauyauviut
+
+---- diversity:  1.2
+---- Generated with seed: "
+i got on the sled at the top of the hil"
+
+i got on the sled at the top of the hilt  yuyckauuaty  w thla atuteircsaat ne hi adagovn taac tyseco y  wiasyt i goebo lyftrugtgoad rg v wu at tyoawtuawteurawiw yiioteuto.oafaut  aalet.ailri.ayiwa a.ea. tts . gatu gaddita lio uwus o ttiayi
+
+--------------------------------------------------
+Iteration  30
+Epoch 1/1
+103971/103971 [==============================] - 44s - loss: 3.0643
+
+---- diversity:  0.5
+---- Generated with seed: "her assigned us to a partner for an assi"
+her assigned us to a partner for an assi eh r or d rrooohar neeat r rhaan h  ra  he on rhe hhhimo h r h h  ar r reih   r anh h tanacrhihrifh d f  arhah n   nah or r ra re n n rhaho rh    wa n e r he   r  hee  nh rhhhr d r rhoh rho a hro  ri
+
+---- diversity:  1.0
+---- Generated with seed: "her assigned us to a partner for an assi"
+her assigned us to a partner for an assiwahrhuac  re nwoant h rw  rshnoi u omwiw  ioishaioh f  f wf nonahotneea. iw heba teidafraroooe r  haarug fer f ohhh h  ft nv n f girr rrewr. owr a   i nwoo ro  r aci tea  nh rr.ireaainl oree hrehodrhr
+
+---- diversity:  1.2
+---- Generated with seed: "her assigned us to a partner for an assi"
+her assigned us to a partner for an assirh  atn nourooeheiwh.eyceeithw at  af rracorhrh der nhhibr o nhoh doo o roerarosatigt rwawerhikhhthon hu ge haeaa  n nws.iddh.ooaboirem oninwn.oe dh herod. oten.nth toe hahihneh reeapirf.manirhaegho r

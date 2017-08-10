@@ -1,0 +1,686 @@
+Using TensorFlow backend.
+
+Reading text from data\roc_text_mid.txt
+
+Corpus Length: 104011
+Vocab Size: 50
+
+Dictionary Map: 8 | ,
+
+Number of sequences: 103971
+
+Vectorization...
+
+X: (103971, 40, 50)
+y: (103971, 50)
+
+Building Model...
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+lstm_1 (LSTM)                (None, 128)               91648
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                6450
+_________________________________________________________________
+activation_1 (Activation)    (None, 50)                0
+=================================================================
+Total params: 98,098
+Trainable params: 98,098
+Non-trainable params: 0
+_________________________________________________________________
+None
+
+--------------------------------------------------
+Iteration  1
+Epoch 1/1
+2017-08-10 13:07:47.005289: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 13:07:47.005343: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 13:07:47.005382: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 13:07:47.005405: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 13:07:47.005426: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 13:07:47.005447: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 13:07:47.005468: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 13:07:47.005489: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 13:07:47.239117: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:940] Found device 0 with properties:
+name: GeForce GTX 970
+major: 5 minor: 2 memoryClockRate (GHz) 1.3165
+pciBusID 0000:01:00.0
+Total memory: 4.00GiB
+Free memory: 3.31GiB
+2017-08-10 13:07:47.239233: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:961] DMA: 0
+2017-08-10 13:07:47.240440: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:971] 0:   Y
+2017-08-10 13:07:47.240799: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0)
+2017-08-10 13:07:48.326910: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3147 get requests, put_count=2581 evicted_count=1000 eviction_rate=0.387447 and unsatisfied allocation rate=0.529393
+2017-08-10 13:07:48.326996: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 100 to 110
+   896/103971 [..............................] - ETA: 180s - loss: 3.48182017-08-10 13:07:48.596127: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3155 get requests, put_count=2705 evicted_count=1000 eviction_rate=0.369686 and unsatisfied allocation rate=0.464976
+2017-08-10 13:07:48.596184: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 193 to 212
+  1664/103971 [..............................] - ETA: 110s - loss: 3.25572017-08-10 13:07:48.866953: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3565 get requests, put_count=4351 evicted_count=2000 eviction_rate=0.459664 and unsatisfied allocation rate=0.350912
+2017-08-10 13:07:48.867083: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 409 to 449
+  3200/103971 [..............................] - ETA: 70s - loss: 3.09312017-08-10 13:07:49.311818: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 6571 get requests, put_count=6453 evicted_count=1000 eviction_rate=0.154967 and unsatisfied allocation rate=0.184599
+2017-08-10 13:07:49.311908: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 1053 to 1158
+103971/103971 [==============================] - 31s - loss: 2.0296
+
+---- diversity:  0.5
+---- Generated with seed: "ouble dip. chip then had to punch skip o"
+ouble dip. chip then had to punch skip out the parot. the clook to ple at the seach hored he went to the sart apay in he were to the mear to for a ded to bo for her spaint. the went to the dear. they friends to gro the as the be the doing w
+
+---- diversity:  1.0
+---- Generated with seed: "ouble dip. chip then had to punch skip o"
+ouble dip. chip then had to punch skip of shinged ob it. i decopitoor and malled, hes were op busching. as a fave up neo coug on heew and it were on they mane ht weft to hely week, the gat the cort her hadrty to gut assvery of arouse the re
+
+---- diversity:  1.2
+---- Generated with seed: "ouble dip. chip then had to punch skip o"
+ouble dip. chip then had to punch skip ochried  folsesttiinde. ridey. asrme hil  they he weaken for weriomihe iutlk.
+eve zewpother thesicfadecibient.. she grugh howed aure.
+lahing it buerksing with hivuill. atoyery. he was app losting. he w
+
+--------------------------------------------------
+Iteration  2
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.6377
+
+---- diversity:  0.5
+---- Generated with seed: "d
+erica wanted to help her mom this than"
+d
+erica wanted to help her mom this than the change was a brought a feard and misted. he was no having for a jass of the the starting day the partion to the staring she all she started the last to make the distiver, she beaching on the star
+
+---- diversity:  1.0
+---- Generated with seed: "d
+erica wanted to help her mom this than"
+d
+erica wanted to help her mom this thanks liped thao he was givlone.
+saa choughoh was out the shote row her pual, i happed the lons th ng the gard whreed and me bundsal leve. his fraends them sut a calleif and offiestic the jusiner
+alkiek,
+
+---- diversity:  1.2
+---- Generated with seed: "d
+erica wanted to help her mom this than"
+d
+erica wanted to help her mom this than she didgenmon turt thes.
+she was wollersal slist, mondya day. onlowe she was uphed tram evento for hows. she fulled very dow. to sem heval cad.
+bam no institicaticaly her mom her plied. they sutting
+
+--------------------------------------------------
+Iteration  3
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.5028
+
+---- diversity:  0.5
+---- Generated with seed: " in costume. when the doorbell rang doug"
+ in costume. when the doorbell rang doug to a realize. i was a realizazion. she sand in the brown a discrudy in the parket to a seecerdy. she was a parter school friends. he was i came out of a selly as the shorted the car and great out of
+
+---- diversity:  1.0
+---- Generated with seed: " in costume. when the doorbell rang doug"
+ in costume. when the doorbell rang doug. sploven't graw it mestors sccoase agroy. they earn was whatfinally said one parke. hemadinghe ralled because her favorible yell sad. she crosmetion boirny on his teash. withore up a boir of came. ki
+
+---- diversity:  1.2
+---- Generated with seed: " in costume. when the doorbell rang doug"
+ in costume. when the doorbell rang doug, in she talking to the crusting earooting and was from site on. sama, out afning  a loob where he wasn't when homed to even gane on oving get to hipplineus! b hard bread compant to gavlerby schooted.
+
+--------------------------------------------------
+Iteration  4
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.4245
+
+---- diversity:  0.5
+---- Generated with seed: " and found a thin envelope. he opened th"
+ and found a thin envelope. he opened the store and took her driver.
+my friend one day from her for her trip. she went to the store. they saw they for a car in the store. the trash was a brold bett the call and she found out of a sthand and
+
+---- diversity:  1.0
+---- Generated with seed: " and found a thin envelope. he opened th"
+ and found a thin envelope. he opened thens. juff got not to siddort wanted it. when the dony was copcresteny swectired.
+i was bett noth. he couldn't stree mad. jeck saw it mug's home trmerl. she was enotits hours he stopes, out talk to sch
+
+---- diversity:  1.2
+---- Generated with seed: " and found a thin envelope. he opened th"
+ and found a thin envelope. he opened that indunale weo that they bost mate an esserselesced out lats. he storped to familotion to help his jass unther. evenurity doppessed for nothing jueses if he seecin's atojems other somether. a he leos
+
+--------------------------------------------------
+Iteration  5
+Epoch 1/1
+103971/103971 [==============================] - 30s - loss: 1.3732
+
+---- diversity:  0.5
+---- Generated with seed: "kly as he could.
+donnie and his team are"
+kly as he could.
+donnie and his team are had me to the street. the day the park to her food and was suppased the stick to start the next day of his plane. he watched to the perfus and she was a start of the sand had a portural. she was her
+
+---- diversity:  1.0
+---- Generated with seed: "kly as he could.
+donnie and his team are"
+kly as he could.
+donnie and his team are efyore.
+tme they didn't keep him it to upa. she then hard a news.
+ther felt maar was and looked a scrwich to the store. in prostman she replanced. the rever went to finally discorne as mide food once
+
+---- diversity:  1.2
+---- Generated with seed: "kly as he could.
+donnie and his team are"
+kly as he could.
+donnie and his team are no depreg hit first. she crunked it! mothers made his way hot to veip. four thre meting the the office thein looking. he hald a hew food, a bought anoude lotstereply lavine tharner. freez, she stond
+
+--------------------------------------------------
+Iteration  6
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.3350
+
+---- diversity:  0.5
+---- Generated with seed: "n. i learned that i shouldn't play with "
+n. i learned that i shouldn't play with a pie. they realized a plank came and selling so a began to the store and managed and signed and showed him how to him. they were surprised to get a bear she could get a great some contest. one day he
+
+---- diversity:  1.0
+---- Generated with seed: "n. i learned that i shouldn't play with "
+n. i learned that i shouldn't play with though her burned found his trying plase.
+rady got it felt comaler and wanted tompig. naw book was kerved the len upses a boverying sabling grandman in. they creinded him he went to some searty. they
+
+---- diversity:  1.2
+---- Generated with seed: "n. i learned that i shouldn't play with "
+n. i learned that i shouldn't play with strip for soar friend. the man dropped buty, rooning out of kilally sife. some, her emplert pushore  staraflely weve aunt.
+itria knew to abel. she west neurnuam sors and wonked to about be and more. t
+
+--------------------------------------------------
+Iteration  7
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.3099
+
+---- diversity:  0.5
+---- Generated with seed: "r. she waited for months for her hair to"
+r. she waited for months for her hair to find a mom. he was painised and worked at the months to have some better good undership. he heard a book. he decided to pushore on a told her and in the car.
+amy wanted to be a car. he put the counti
+
+---- diversity:  1.0
+---- Generated with seed: "r. she waited for months for her hair to"
+r. she waited for months for her hair too yean his parents in the pike forming the cas. they school, that are explacaved a bunch scare. he had to most bogging at forgottents. they was nest boon, bob sure the sweer gearcing sandua hat was co
+
+---- diversity:  1.2
+---- Generated with seed: "r. she waited for months for her hair to"
+r. she waited for months for her hair to beshovey gif a  very in mary sophis computir. when i nvered me her son, melal took his house.
+amy wanted to neerett neggs that from pawan's houst. while in ancepten had unaugery chipbther.
+inex ulse
+
+--------------------------------------------------
+Iteration  8
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.2849
+
+---- diversity:  0.5
+---- Generated with seed: "een married for years. he surprised her "
+een married for years. he surprised her food so he was cooled. she was to the grandma. he had a candy meling the droves. he was hungry of the mall.
+gira was a bauble to fire one. she was forget to the park. the beand told him drivers to the
+
+---- diversity:  1.0
+---- Generated with seed: "een married for years. he surprised her "
+een married for years. he surprised her enood with hard.
+he chased pomunwited his car. teor wanted to buy an ad. the fire pladed and year contest for at my chript. it was with his bother told bearaxting one of saidly about whoted pair. this
+
+---- diversity:  1.2
+---- Generated with seed: "een married for years. he surprised her "
+een married for years. he surprised her assure.
+or very i staled and she sontemets. jadoisheerd reclived the look.
+her recired to paby. after a raus of coldent. one paints he watched to fior. he caught 0hew yout for him to the destarible va
+
+--------------------------------------------------
+Iteration  9
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.2669
+
+---- diversity:  0.5
+---- Generated with seed: "y!
+i was analyzing some data for my stat"
+y!
+i was analyzing some data for my station. so he had to do the best to her job. it was very and dan and goited to see finnien. he had me more as to help his baking porther she came to the studient. the beach went to the pil. i decided to
+
+---- diversity:  1.0
+---- Generated with seed: "y!
+i was analyzing some data for my stat"
+y!
+i was analyzing some data for my stataolicree like for a rack. the hosoper their the madialds to get my antims. surdernely always living the mesturet. she miss back mile from to take home. frother was rea sound him his gians naved over t
+
+---- diversity:  1.2
+---- Generated with seed: "y!
+i was analyzing some data for my stat"
+y!
+i was analyzing some data for my stationing for a flas. a cartherka came and class. she decided to have home gave lessom. iver'e kneed the bexty penfits. everyold like as markneerd had chacked her.
+y's cried had to calp.
+befts dip the co
+
+--------------------------------------------------
+Iteration  10
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.2517
+
+---- diversity:  0.5
+---- Generated with seed: "un to hide the candy filled eggs in gree"
+un to hide the candy filled eggs in green cour. the boy was to the black and showed and ready so his foot was beach. i went to the fight of the party. i spent the door to the masters to go on her own the man same. my great she decided to ge
+
+---- diversity:  1.0
+---- Generated with seed: "un to hide the candy filled eggs in gree"
+un to hide the candy filled eggs in green like the girl's doorcearitient. every cans nothing bounhards on the baking for school. where thanks i hap them. up. i was , !
+houred him working so mutter's wife her friends dinner complay basing jo
+
+---- diversity:  1.2
+---- Generated with seed: "un to hide the candy filled eggs in gree"
+un to hide the candy filled eggs in greet. he ploided drokeed ann atristerpalky. they haw. tin was  ding. the way for a cave. tmous going her owner dim ravel traccing. shat no one fell living and moved up caked.
+ireped aim worked the oceced
+
+--------------------------------------------------
+Iteration  11
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.2396
+
+---- diversity:  0.5
+---- Generated with seed: "ookies in his mouth at a party. the peop"
+ookies in his mouth at a party. the people was a band called when the first promie to be a movie some at rejectioning and and saw sumpers with for a shopper. she was betomer and he surk to her sonce of the street with his car. her mom was a
+
+---- diversity:  1.0
+---- Generated with seed: "ookies in his mouth at a party. the peop"
+ookies in his mouth at a party. the people in met for pet more and and called when it was maning surfreing, he was a fathor, and began wasn't weeks in the five with the map book to no everevel money. as her mom satey, they hated her foot po
+
+---- diversity:  1.2
+---- Generated with seed: "ookies in his mouth at a party. the peop"
+ookies in his mouth at a party. the people in soupe he ranting a doys for xirting down wearovershights. alnia had a yown of but thens's to curboray bill of of the garace. cinny are moving towarks. her grandlass family was bettenge.
+hie's bo
+
+--------------------------------------------------
+Iteration  12
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.2298
+
+---- diversity:  0.5
+---- Generated with seed: "er up for some lessons. it made all the "
+er up for some lessons. it made all the street and condud me to get him the car house, the strew from his house with his dad.
+i was very the cookies to the house. so he was always cookies and allows a the next day!
+mark said the fire was a
+
+---- diversity:  1.0
+---- Generated with seed: "er up for some lessons. it made all the "
+er up for some lessons. it made all the new movie. john sure ay cooker ate minute day. she went to mark burnned sure his house wearel playerss. she was walking all's araundgo portonger. hed being thour the gorow to fight chipes greated of s
+
+---- diversity:  1.2
+---- Generated with seed: "er up for some lessons. it made all the "
+er up for some lessons. it made all the telct weeked, georguitedy, i cald home i looked hit, and begana!
+mile shaded the toveebs daysed ecreed. cake played being ady very suefuttly memcily. felaster once day hom that put her ready. i my gra
+
+--------------------------------------------------
+Iteration  13
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.2165
+
+---- diversity:  0.5
+---- Generated with seed: " at school the next day, many girls were"
+ at school the next day, many girls were felt on the new start more secing langers. they also was playing a leash be to sinct jim. he was coming my class them. i was glad a princ faming in the store. he was aller them a months. she liked to
+
+---- diversity:  1.0
+---- Generated with seed: " at school the next day, many girls were"
+ at school the next day, many girls were chold. they couldrauls getting his mom. he went. the rampient trained them tony everything. since then an is kspick becaps. dan had working wearched, luns was gerstrome piem in the head fon pickets.
+
+---- diversity:  1.2
+---- Generated with seed: " at school the next day, many girls were"
+ at school the next day, many girls were be very patched. she got a cless hoismagen.
+i chresmingly's lessons to helley.
+john sincer simt in her homelewtor and we contrying told him teaty very kinder burnt. lucy aemavility girl was. laterdno
+
+--------------------------------------------------
+Iteration  14
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.2100
+
+---- diversity:  0.5
+---- Generated with seed: " of books. they decided to meet up after"
+ of books. they decided to meet up after the movie the that the college. he decided to go to the steps. she and him was ready she was a pot of college. he was so his footsice the strailing in his dad was the first the streates. he was a bar
+
+---- diversity:  1.0
+---- Generated with seed: " of books. they decided to meet up after"
+ of books. they decided to meet up after consuptay. he is and returned a class ittine.
+reg gave a lassed she felt a big would dreamiandy game the stall. the feat was a park hard. sidders and went to him.
+jim wanted a baby. she bought inside
+
+---- diversity:  1.2
+---- Generated with seed: " of books. they decided to meet up after"
+ of books. they decided to meet up after built.
+billy' pa wasren! if coocsing. nates at.
+amy talked she finally varied my ie new. her bierhanding first minutes and eaming they. i took her to trucks year him with rome sown tabyeling pari. af
+
+--------------------------------------------------
+Iteration  15
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.1999
+
+---- diversity:  0.5
+---- Generated with seed: "s later and she was nowhere to be seen!
+"
+s later and she was nowhere to be seen!
+i was very and went out of chine.
+bill was a basket at his fast all a lifela. she clussed the could take the could make. he saw a brigh was a brought of every had a sholp.
+tom had a ball on the salad.
+
+---- diversity:  1.0
+---- Generated with seed: "s later and she was nowhere to be seen!
+"
+s later and she was nowhere to be seen!
+suzy adniched and followed it old ecreecrapel. she asked are her fantions dinner. the sonce become onlo, atother bill and him who welling rest sudden, milo was glad but all this helper took her down.
+
+---- diversity:  1.2
+---- Generated with seed: "s later and she was nowhere to be seen!
+"
+s later and she was nowhere to be seen!
+a'vea dijustis a door late though tinoge ow signca innial the redaliner money. the rain goods to coul the weath. when he went to itetowheted. the ice cookies was ghock and fithly gorice todd after the
+
+--------------------------------------------------
+Iteration  16
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.1921
+
+---- diversity:  0.5
+---- Generated with seed: "e.
+amy had finally accepted her crush ra"
+e.
+amy had finally accepted her crush ran into the teachershere smorked the book and started to work in the crung time to start the car estineng the college the car.
+a had a salm turned the stall we lessons and her both loved she can stated
+
+---- diversity:  1.0
+---- Generated with seed: "e.
+amy had finally accepted her crush ra"
+e.
+amy had finally accepted her crush rastated lyneve. holep were of a mudian to he parties. a flying a finiburontly mell me lyar. audipaving coffee in the intests in an exter's feet munity winged. jake was took more for feebers. beday thou
+
+---- diversity:  1.2
+---- Generated with seed: "e.
+amy had finally accepted her crush ra"
+e.
+amy had finally accepted her crush ran.
+she ended up for the smelt looked she hit the f. hearaches ating refuses green long liar. everyone pated but went ithorold a cans more food.
+i has done maratcring she took a few.
+it was never jim's
+
+--------------------------------------------------
+Iteration  17
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.1845
+
+---- diversity:  0.5
+---- Generated with seed: "aduated as a chef. joe knew it was the r"
+aduated as a chef. joe knew it was the right came out of the count. he loved to the movie in her family. she asked her spear since one day to the stall soon a partmer. he was despessed, i was a creistally store. he would nered to cook out.
+
+---- diversity:  1.0
+---- Generated with seed: "aduated as a chef. joe knew it was the r"
+aduated as a chef. joe knew it was the road that sheir clothes. he came ot to meeting his teacher. he dropped thow to the heliw to cannest fights abay. sake was no money fun the suitclos mouse. jof reeked what had some pisters the complette
+
+---- diversity:  1.2
+---- Generated with seed: "aduated as a chef. joe knew it was the r"
+aduated as a chef. joe knew it was the resented after a hall. suddenly, a bus to ga' tear.
+evalaisted he found a test to for a dreed hur. a etffic eventsish grarded from hours dunk. lucky at foob, he had murged as, readning her schao bother
+
+--------------------------------------------------
+Iteration  18
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.1792
+
+---- diversity:  0.5
+---- Generated with seed: "ing a video on youtube. at the end of th"
+ing a video on youtube. at the end of the party for a new books. i looked understave the kitchen.
+one day, so he took her for no lottery day. she didn't tell the park.
+dan was a bash. the better him to the house to make and he wanted to can
+
+---- diversity:  1.0
+---- Generated with seed: "ing a video on youtube. at the end of th"
+ing a video on youtube. at the end of the fie finish. the new house can test frum.
+jane candred he lead tirm five two feel contecting he came out.
+when he touse hurriabe to a very store, mark was on town.
+fred held a sonse planes to join fo
+
+---- diversity:  1.2
+---- Generated with seed: "ing a video on youtube. at the end of th"
+ing a video on youtube. at the end of themway havery ordered home to seely. all began thouns with it his friendshif i was ahrater. she coppested up to bavyly payoules. one dy frieded cl. dan was time an smoke instears of by. she sincelly ar
+
+--------------------------------------------------
+Iteration  19
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.1711
+
+---- diversity:  0.5
+---- Generated with seed: "y he heard footsteps behind him. john be"
+y he heard footsteps behind him. john began to hide some later for school to get a new to see.
+i went to the store to the floor, and he was a new street. he was to the beach to the first the girl to surprise her food intervery long.
+my moth
+
+---- diversity:  1.0
+---- Generated with seed: "y he heard footsteps behind him. john be"
+y he heard footsteps behind him. john began to the fish. laura food a startr of this off  's parents to carver. it was all after a deaf with now waring at the big shop to go to supar in their work une from his loudly. leslie saw a eyeg succ
+
+---- diversity:  1.2
+---- Generated with seed: "y he heard footsteps behind him. john be"
+y he heard footsteps behind him. john begund her brother yearching off an tesilisa.
+a weep souring  very offererbround!
+suce was his newly sigreater, antroverlire ar, she found online, she got son thny danes to xy food. one thas dunk a pet
+
+--------------------------------------------------
+Iteration  20
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.1657
+
+---- diversity:  0.5
+---- Generated with seed: " so annoyed, he decided to sit in the ai"
+ so annoyed, he decided to sit in the air all. the bus driver trained other pested for the could heart the prom. and was forto the jokes to the condayed and carefully drea she won the parking small nearb. he bought a local for many asked to
+
+---- diversity:  1.0
+---- Generated with seed: " so annoyed, he decided to sit in the ai"
+ so annoyed, he decided to sit in the air went off with so that the door astame from bus dayes. the howe was hit a few use.
+mina saw he bought kid back on . when he liked. bob ended us jim had no longer with mad. i had not belowed it, she s
+
+---- diversity:  1.2
+---- Generated with seed: " so annoyed, he decided to sit in the ai"
+ so annoyed, he decided to sit in the ainte softhe for try in  brwarol.
+mornia ended up hipped, she reked only sittre of collere. after horrs up for the windom hearf, when i asked what the hambreg premirr drassing in a pet. i called moo thi
+
+--------------------------------------------------
+Iteration  21
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.1604
+
+---- diversity:  0.5
+---- Generated with seed: "o cancel his date. rodney ended up worki"
+o cancel his date. rodney ended up working park. one day, he went to the mall up and the still was all the trip with the house.
+the girl was excited and he was treatment soup from the little and cream.
+jeff has a suppris with her family. he
+
+---- diversity:  1.0
+---- Generated with seed: "o cancel his date. rodney ended up worki"
+o cancel his date. rodney ended up working it went over. it found another hir peata. jake took his breegining.
+chlind's foun to wear vinedally tectress, his ifcerlidence sent one singing a wife. but on her movie, but went with the last year
+
+---- diversity:  1.2
+---- Generated with seed: "o cancel his date. rodney ended up worki"
+o cancel his date. rodney ended up working woods. their eantendy rray got our fabric. xa showel from very look dis. the bewar didn't made meing park.
+iva many always since day he phooled it life. his only felt surben all over. we forto the
+
+--------------------------------------------------
+Iteration  22
+Epoch 1/1
+103971/103971 [==============================] - 30s - loss: 1.1556
+
+---- diversity:  0.5
+---- Generated with seed: "ever, she grabbed my card. in addition, "
+ever, she grabbed my card. in addition, she bought the facebor and he couldn't stay for a way to see the balled tire offer.
+the snice was keeply polking to the droom for my friends to the book.
+the man was driving the mall. he bound the car
+
+---- diversity:  1.0
+---- Generated with seed: "ever, she grabbed my card. in addition, "
+ever, she grabbed my card. in addition, and folling a part on more car. he was jugged that she stopped visiting leadent, but geft. they finged out othing healthy catch of would. they reached my boyfriend seting them the viowl chase.
+theurea
+
+---- diversity:  1.2
+---- Generated with seed: "ever, she grabbed my card. in addition, "
+ever, she grabbed my card. in addition, after the dave become across that sickal said a bluna. they dish hurt walks to bakely prace polking it very pared floor with suigh bisting their we ferk whildhance of the book popctone.
+before was juc
+
+--------------------------------------------------
+Iteration  23
+Epoch 1/1
+103971/103971 [==============================] - 30s - loss: 1.1507
+
+---- diversity:  0.5
+---- Generated with seed: "for this test. olivia grabs some coffee "
+for this test. olivia grabs some coffee each named high from the spiece. she was on the startle the girls and heard the park. he didn't said she had never told his dad and he was allowed his birthday but she saw a boll to her. michael's fam
+
+---- diversity:  1.0
+---- Generated with seed: "for this test. olivia grabs some coffee "
+for this test. olivia grabs some coffee dochars. her mom's land's songess to helping his fronk troom. fit allowe when there were the barehon sest. he bought his bed they went home.
+charli was convinced his ca, the news diesisted broke in no
+
+---- diversity:  1.2
+---- Generated with seed: "for this test. olivia grabs some coffee "
+for this test. olivia grabs some coffee perpern.
+mint tome her emboonge dopsing arrovat or. carol more jumped barrent'toe, in tort now. when she couldn't play bull andince toon after the for onking through agex. he rave mean his famist in t
+
+--------------------------------------------------
+Iteration  24
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.1454
+
+---- diversity:  0.5
+---- Generated with seed: "k from home. turning his computer on he "
+k from home. turning his computer on he trip he found the street. when the store was going to the boat waiten. he was so heard walked all a tire the college that manksgives that she started to get an iverrating and then had been the mall.
+m
+
+---- diversity:  1.0
+---- Generated with seed: "k from home. turning his computer on he "
+k from home. turning his computer on he outside that i go for a movie up for are amopuarriial. the head talking and from disnaymappit. he is on the garme about he. the ball love his dog.
+ly as soon was an asa been. he walked into the glass
+
+---- diversity:  1.2
+---- Generated with seed: "k from home. turning his computer on he "
+k from home. turning his computer on he retrryed a , long, an had realized it returted in an lift ty, in mirrot nighting inture.
+assictal ad it unatke foots and bowleled me fraw that dissalled bought. he was brway dhivery. cike up for the i
+
+--------------------------------------------------
+Iteration  25
+Epoch 1/1
+103971/103971 [==============================] - 30s - loss: 1.1389
+
+---- diversity:  0.5
+---- Generated with seed: " they told him the movie got bad reviews"
+ they told him the movie got bad reviews to the stalt car for a hotel. i stopped out the day of his dad to take him his house. i went to the business the car for him. she made it day and the dog was contested and became for a great change.
+
+---- diversity:  1.0
+---- Generated with seed: " they told him the movie got bad reviews"
+ they told him the movie got bad reviews and mmarm take with became but show well. they hail ty stuck for moman publerss for his mom another fight.
+id i needed to dop. i told him on the challeth carlos of the latary and started to find her
+
+---- diversity:  1.2
+---- Generated with seed: " they told him the movie got bad reviews"
+ they told him the movie got bad reviews out in rea. she didn't carl taine. luckily they are vided tosty neighbra! cake eared posicized to double house. but sizes and wheep he thouglt he working a fire very breadzed contrace.
+kaily had sure
+
+--------------------------------------------------
+Iteration  26
+Epoch 1/1
+103971/103971 [==============================] - 30s - loss: 1.1343
+
+---- diversity:  0.5
+---- Generated with seed: " perfectly.
+i've always wanted to be abl"
+ perfectly.
+i've always wanted to be able to contace some with the basketball that she was working and came to go to the scholl with his wife for months. he started sures and then was a ball of the long to start for a bar ball. he couldn't
+
+---- diversity:  1.0
+---- Generated with seed: " perfectly.
+i've always wanted to be abl"
+ perfectly.
+i've always wanted to be able some food both congually at, she and him befuses into haugh her nice. they asked it, him, she got josh to beat a teacher. the next day, she was alreppy. she took it. hatch it was bad. she decided to
+
+---- diversity:  1.2
+---- Generated with seed: " perfectly.
+i've always wanted to be abl"
+ perfectly.
+i've always wanted to be able to hadd a lagh fainer to her. mo tought out
+mawerd had to go said in tme fus.
+jertie love at her day boke kidny. she lustonor, she sperted, he wlasely concervatering trick first schoo bost. helite
+
+--------------------------------------------------
+Iteration  27
+Epoch 1/1
+103971/103971 [==============================] - 30s - loss: 1.1286
+
+---- diversity:  0.5
+---- Generated with seed: "the soup when he grabbed it from the mic"
+the soup when he grabbed it from the microw supplies. he started and he crusted. he was nervopies and he would stay the store. he found a chip of both and was really marriage. he was a part in the store to the street. he spent a cloth as he
+
+---- diversity:  1.0
+---- Generated with seed: "the soup when he grabbed it from the mic"
+the soup when he grabbed it from the michay.
+laura was a pit count schollic hemishing disa body for an ate play on the ab. it opted her deligiords. the jokes arrived i smile and embeding it too ward georgally. suddened he parajes, eventuall
+
+---- diversity:  1.2
+---- Generated with seed: "the soup when he grabbed it from the mic"
+the soup when he grabbed it from the microwave option flip carr, tim had to eat their sarver. he clashed there was a havo. the week, much was that intervered and went to her optotion time. she then re fountiegs. she a lots at refin. and bec
+
+--------------------------------------------------
+Iteration  28
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.1268
+
+---- diversity:  0.5
+---- Generated with seed: " but that did not fix her hair. she wait"
+ but that did not fix her hair. she waited the next day in the house one day he was able to chicken one one day. she was able to play on the accident. she cussed the dog was watching the store.
+kare was able to be always and took a few hour
+
+---- diversity:  1.0
+---- Generated with seed: " but that did not fix her hair. she wait"
+ but that did not fix her hair. she waited him so christmas prodonce that soon. unfervoly event stayed propesting be attendwate. they conterly, he went dusteaded that impre, before reunes it is strewnmen, a plane is happy whit troude.
+soon
+
+---- diversity:  1.2
+---- Generated with seed: " but that did not fix her hair. she wait"
+ but that did not fix her hair. she waite his class hired mman came told very ram. he waite boaute. everyone fell road by yelled.
+urcan ran brought thes to prace from plabe. it's nevery sandy dronge the ahotsed into micth sontes, she showed
+
+--------------------------------------------------
+Iteration  29
+Epoch 1/1
+103971/103971 [==============================] - 30s - loss: 1.1202
+
+---- diversity:  0.5
+---- Generated with seed: " got first place.
+teddy was going on a b"
+ got first place.
+teddy was going on a bread with his friends. i was scorked on a few one day. he always was mad the shelf.
+i was scared him to be signd a good brough for a beautiful in the grocery. i brought him to make it in the salad of
+
+---- diversity:  1.0
+---- Generated with seed: " got first place.
+teddy was going on a b"
+ got first place.
+teddy was going on a be lifrinnt for some long our. freen soon he wasceed bannienny. he nearking to the rest day in the mistent. he dienely light they almosh right abaror furnits on cyess on adday. gina choir easly finish
+
+---- diversity:  1.2
+---- Generated with seed: " got first place.
+teddy was going on a b"
+ got first place.
+teddy was going on a big mikt. jay a syndy was cling her monwon. kim stole everyday her tony started, sally team as  left been. jason happples so, there winded thearsy of jairs wime. dyla used to get a lone and friends.
+ma
+
+--------------------------------------------------
+Iteration  30
+Epoch 1/1
+103971/103971 [==============================] - 31s - loss: 1.1193
+
+---- diversity:  0.5
+---- Generated with seed: "ize with them, but she demurred. her fri"
+ize with them, but she demurred. her friends bought a long time. he searched the was having long to the new boyfriend sandy could. he could her family in a haid. he didn't hope there were and got to the mal. i had to walk to the countersal
+
+---- diversity:  1.0
+---- Generated with seed: "ize with them, but she demurred. her fri"
+ize with them, but she demurred. her friends pandy timaced joe a long with hirry spite nike up coffee. !
+i opened me to the wonking for a news's before howed but to the pick plates. i asked in over it as he was agest breath.
+jake took him i
+
+---- diversity:  1.2
+---- Generated with seed: "ize with them, but she demurred. her fri"
+ize with them, but she demurred. her frie trrphyers made them.
+after that skitterra's aymagelalaking untion it. at my brighth scyebra house. one day, a girl wanted to go to toace. the asyoulere shost to won her car trampening. thenball stor

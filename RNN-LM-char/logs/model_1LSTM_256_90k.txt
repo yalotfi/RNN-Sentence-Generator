@@ -1,0 +1,657 @@
+Using TensorFlow backend.
+
+Reading text from data\roc_text_mid.txt
+
+Corpus Length: 91174
+Vocab Size: 50
+
+Dictionary Map: 8 | ,
+
+Number of sequences: 91134
+
+Vectorization...
+
+X: (91134, 40, 50)
+y: (91134, 50)
+
+Building Model...
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+lstm_1 (LSTM)                (None, 256)               314368
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                12850
+_________________________________________________________________
+activation_1 (Activation)    (None, 50)                0
+=================================================================
+Total params: 327,218
+Trainable params: 327,218
+Non-trainable params: 0
+_________________________________________________________________
+None
+
+--------------------------------------------------
+Iteration  1
+Epoch 1/1
+2017-08-10 10:58:26.345348: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 10:58:26.345402: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 10:58:26.345446: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 10:58:26.345483: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 10:58:26.345517: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 10:58:26.345552: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 10:58:26.345574: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 10:58:26.345595: W c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-08-10 10:58:26.589432: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:940] Found device 0 with properties:
+name: GeForce GTX 970
+major: 5 minor: 2 memoryClockRate (GHz) 1.3165
+pciBusID 0000:01:00.0
+Total memory: 4.00GiB
+Free memory: 3.31GiB
+2017-08-10 10:58:26.589514: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:961] DMA: 0
+2017-08-10 10:58:26.590726: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:971] 0:   Y
+2017-08-10 10:58:26.591279: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0)
+2017-08-10 10:58:28.765330: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3147 get requests, put_count=2581 evicted_count=1000 eviction_rate=0.387447 and unsatisfied allocation rate=0.529393
+2017-08-10 10:58:28.765402: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 100 to 110
+  896/91134 [..............................] - ETA: 275s - loss: 4.59732017-08-10 10:58:29.108376: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3156 get requests, put_count=2702 evicted_count=1000 eviction_rate=0.370096 and unsatisfied allocation rate=0.466096
+2017-08-10 10:58:29.108439: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 193 to 212
+ 1664/91134 [..............................] - ETA: 162s - loss: 3.97132017-08-10 10:58:29.443592: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3554 get requests, put_count=4298 evicted_count=2000 eviction_rate=0.465333 and unsatisfied allocation rate=0.36269
+2017-08-10 10:58:29.443683: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 372 to 409
+ 2944/91134 [..............................] - ETA: 104s - loss: 3.56882017-08-10 10:58:29.917290: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:247] PoolAllocator: After 3401 get requests, put_count=3686 evicted_count=1000 eviction_rate=0.271297 and unsatisfied allocation rate=0.233461
+2017-08-10 10:58:29.917355: I c:\tf_jenkins\home\workspace\release-win\m\windows-gpu\py\35\tensorflow\core\common_runtime\gpu\pool_allocator.cc:259] Raising pool_size_limit_ from 871 to 958
+91134/91134 [==============================] - 36s - loss: 2.1871
+
+---- diversity:  0.5
+---- Generated with seed: ". the color went on the couch. kelly was"
+. the color went on the couch. kelly was her lest prack digased the reat was to was were sterter.
+i was dring the pared tire.
+the for was in was a ppace for fright. he was mored to streen the gow was his the strreet. the start and her her h
+
+---- diversity:  1.0
+---- Generated with seed: ". the color went on the couch. kelly was"
+. the color went on the couch. kelly wased all badsis. it want and grangst. wilhay glow the hid a pateri challss.
+thr jom was mony was a stauced. the liked to wang deen sook of shour tithes. noy wus hew tars his mote. was a gto regaded he n
+
+---- diversity:  1.2
+---- Generated with seed: ". the color went on the couch. kelly was"
+. the color went on the couch. kelly was is reenected throe smilts. wory ascoper worn all alsowlf his wes. the decided it usera. caly pls's. asl hip hep en the blony.
+, veang mopesed of then for howpized. he hordoo a fand cless. his aswip h
+
+--------------------------------------------------
+Iteration  2
+Epoch 1/1
+91134/91134 [==============================] - 33s - loss: 1.6670
+
+---- diversity:  0.5
+---- Generated with seed: "ed she had changed her mind, and chose a"
+ed she had changed her mind, and chose and day. he was ressing to some for my tried and sure the steee his reard companies with her car.
+jane was very green to a reach her be and she was with his car. she was very fant to her tried the plan
+
+---- diversity:  1.0
+---- Generated with seed: "ed she had changed her mind, and chose a"
+ed she had changed her mind, and chose and blew a hotured itered wanted in the school. sned the staegeg all blepting builly invited to way coalily, she sure thindarely for and deachice smade. he blelladed him luce dogrard crorues and sheept
+
+---- diversity:  1.2
+---- Generated with seed: "ed she had changed her mind, and chose a"
+ed she had changed her mind, and chose afgoungay. her.
+sheeren was luser strows her coure and it and raed, the him friends nomesdesf, he was go matchady anothingh. it and timey on every lige afd upceston . jogh facklitedan wanted un. i was
+
+--------------------------------------------------
+Iteration  3
+Epoch 1/1
+91134/91134 [==============================] - 34s - loss: 1.5035
+
+---- diversity:  0.5
+---- Generated with seed: "r something else. i jumped out of bed an"
+r something else. i jumped out of bed and he got a lot from his son to convincer soon.
+a slow was going a son and she saw a hot and sported the dair to a sard and poliged. he was the pain and was aurice shours on his pien back come to the s
+
+---- diversity:  1.0
+---- Generated with seed: "r something else. i jumped out of bed an"
+r something else. i jumped out of bed and invide he foughed to she had cater, she aweved out in hic told then gina his before. he was got to a poy wanted a cancucam peef of to my listeat. one dad was now their cat offie turny. she home to h
+
+---- diversity:  1.2
+---- Generated with seed: "r something else. i jumped out of bed an"
+r something else. i jumped out of bed and i sragled extices!
+my foun becats sappy backsion dg veili. ho showed my bandle a cruck. in they rassigg, to put is had becass prous duvs from doing his car got sating.
+mare plate boke tinute. they i
+
+--------------------------------------------------
+Iteration  4
+Epoch 1/1
+91134/91134 [==============================] - 33s - loss: 1.4034
+
+---- diversity:  0.5
+---- Generated with seed: "irthday his dad gave him a magic set. he"
+irthday his dad gave him a magic set. he went to the man and truck in the plane. they went to the buse!
+i decided to get a birthday. she stopped on the best to the house. he realized to his driver were. he was now the part. she was excited
+
+---- diversity:  1.0
+---- Generated with seed: "irthday his dad gave him a magic set. he"
+irthday his dad gave him a magic set. he tried the trace singers. she put it and smar how doloned in as saming. grome a movie hode at tirs to the siversor left there. there went to the adny sappinn.
+visbectins outsides for the looks. my car
+
+---- diversity:  1.2
+---- Generated with seed: "irthday his dad gave him a magic set. he"
+irthday his dad gave him a magic set. he innuse fork ty fell spent when sueing, newed, there was o ppiece. thengrecis was my notes friet. he could dave. road that schood. vight not decebeces pitting on timsaue funutiend. her pricray find ol
+
+--------------------------------------------------
+Iteration  5
+Epoch 1/1
+91134/91134 [==============================] - 33s - loss: 1.3495
+
+---- diversity:  0.5
+---- Generated with seed: "ht he could do it himself but the teache"
+ht he could do it himself but the teacher with the new sprotte. she was a pie was that been on his dad to the front of the man to his parents. the just stopped to his car on the seen of his dad a teacher to the a starter to his car and a ch
+
+---- diversity:  1.0
+---- Generated with seed: "ht he could do it himself but the teache"
+ht he could do it himself but the teacher for a flirse. stasse were upsed on the fliends. she suoped him to stow a trib on the turned. i helled his machire end and started to the also varging. he got miss. lates i used to a look for or the
+
+---- diversity:  1.2
+---- Generated with seed: "ht he could do it himself but the teache"
+ht he could do it himself but the teacher tireel. he hearting to hirsic cast. then, he get one new tylad stoared a diangecce.  fert firstad, ring were very rinkeat coffee through. he had a guitary minates about tharte. dinned well, she told
+
+--------------------------------------------------
+Iteration  6
+Epoch 1/1
+91134/91134 [==============================] - 34s - loss: 1.3004
+
+---- diversity:  0.5
+---- Generated with seed: " the produce section, she spotted a dog."
+ the produce section, she spotted a dog.
+gina's dad always wanted to work the car to see a looken. he got the movie that a popol pie could to park it.
+jamie was going to start the like her coling for a man was a pet. he have a sunging surer
+
+---- diversity:  1.0
+---- Generated with seed: " the produce section, she spotted a dog."
+ the produce section, she spotted a dog. my dad had in the posion to he was o called tamo. joen's asmise need was willing from a monro him street. elliad, when the fair moullys into the train storm hard for her. one day samplia loved to bet
+
+---- diversity:  1.2
+---- Generated with seed: " the produce section, she spotted a dog."
+ the produce section, she spotted a dog. they preplied an lopar car anything on the fidsos some yings. amy no take i then atson was the burged in saw his grandmin.
+carie was as arnover grades for more agac.
+call leally phenlly alked herielw
+
+--------------------------------------------------
+Iteration  7
+Epoch 1/1
+91134/91134 [==============================] - 34s - loss: 1.2669
+
+---- diversity:  0.5
+---- Generated with seed: "basement. he dug out some dusty cans wit"
+basement. he dug out some dusty cans with her car driver. she was the deer for a new sitting back preat and was no one play. he was going to see a but friends to go to see shorts. his friend heary family and the contest was take. he was ful
+
+---- diversity:  1.0
+---- Generated with seed: "basement. he dug out some dusty cans wit"
+basement. he dug out some dusty cans with the wearing to make to get storm to give ourse. she was forced to ple feep they were off. rim was anr of the first i jumped knat blatch book she liked. and get all a mouth toard!
+she wanted to a new
+
+---- diversity:  1.2
+---- Generated with seed: "basement. he dug out some dusty cans wit"
+basement. he dug out some dusty cans with accuner foul couldn't casoos. his outmin lessed to goung, ruintabredsh out and was couldngucolss manys with chante. howeving untrip and her friend amet salad, at the book movie. earienged jobs but a
+
+--------------------------------------------------
+Iteration  8
+Epoch 1/1
+91134/91134 [==============================] - 34s - loss: 1.3703
+
+---- diversity:  0.5
+---- Generated with seed: "y during ching ming.
+holly looked over t"
+y during ching ming.
+holly looked over thechar_roc.py:16: RuntimeWarning: divide by zero encountered in log
+  preds = np.log(preds) / temperature
+?'s ?, she?rt a"buter seart to ge". he was at the lobble basket to the concer. i was a perfor dietic for chose fo" so he was a candy. tan"'s son was excited and sack of "chonge"!
+the "way was father
+
+---- diversity:  1.0
+---- Generated with seed: "y during ching ming.
+holly looked over t"
+y during ching ming.
+holly looked over to "0vo"tual "f's ?xtrrust friend. t"watch li½ncuped and fought more ch"'s allachoot.»?boge. d?d's adustomener take many cary, addited. since edden?, kelly wa"b at off »'s ordoli?. divor?vivea was crea
+
+---- diversity:  1.2
+---- Generated with seed: "y during ching ming.
+holly looked over t"
+y during ching ming.
+holly looked over the?'t "
+moth"ox b"andane beth in gr»cates on. saked into ou? a»modn't c½uple very h»balway.
+f?rith decous?"!
+philba a½ved mike, he. chuling had feeled by to h»lary. salina's hai½was on newsestradendan
+
+--------------------------------------------------
+Iteration  9
+Epoch 1/1
+91134/91134 [==============================] - 35s - loss: 2.2579
+
+---- diversity:  0.5
+---- Generated with seed: "an singing and calmed down. he learned a"
+an singing and calmed down. he learned a fancation t, it brushday. she wanted to ge in the trash with the point. the car and got home and the couldn't have a man a boter were picture. after her favory for the piech so she had to her one day
+
+---- diversity:  1.0
+---- Generated with seed: "an singing and calmed down. he learned a"
+an singing and calmed down. he learned and folt hopting any big seece. the boys was sureny to the test. she had to play home with a baby. it was excited of sklobsion. the ept sat on the car home truck place. it frew a crasaly from new harni
+
+---- diversity:  1.2
+---- Generated with seed: "an singing and calmed down. he learned a"
+an singing and calmed down. he learned away so her. this stheng, she wanned to his sits. i mashadreed, hosleast i done but one mon. amy went the lovy sinsed. alle. he thought and it that she got to his oveed. oheristowned game a repartneat
+
+--------------------------------------------------
+Iteration  10
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 1.2322
+
+---- diversity:  0.5
+---- Generated with seed: "en. as she planted a row of seeds, she m"
+en. as she planted a row of seeds, she made his mom. she was on the car decide to start she came out.
+jake needed to find a few minutes. on and sogarded and was watched. he had a salon pack at the man and had a basket.
+we came to cook. i wa
+
+---- diversity:  1.0
+---- Generated with seed: "en. as she planted a row of seeds, she m"
+en. as she planted a row of seeds, she made it had decided he work his bimon.
+the boyfriend hated sick hor outside. a mana's past flighterspyixies wheels iceppoters. every eventually, thoodget didn't say simples. we aring worrie to sitt how
+
+---- diversity:  1.2
+---- Generated with seed: "en. as she planted a row of seeds, she m"
+en. as she planted a row of seeds, she massedablessets. but the commin always crusted at her. i was juntmable hadmy breekmi vicite meab. she was everylying eblincevior.
+jay sad was explaced befarching was nottust. she was obviously.
+my crus
+
+--------------------------------------------------
+Iteration  11
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 1.2240
+
+---- diversity:  0.5
+---- Generated with seed: " buy. tim even convinced them to get an "
+ buy. tim even convinced them to get an invitil surprise. she was very foll him to see him. she had a police into the man with his parents. john had to researd for a shopper salt. she had to do left her way in the start. the only had to par
+
+---- diversity:  1.0
+---- Generated with seed: " buy. tim even convinced them to get an "
+ buy. tim even convinced them to get an enkeier two talls'd haits bad. i chosely him cerefurtured seeing dimbled italy deep any money. bob is and said their and returned shativer of bodgest weather chased witho on a school. the man walked o
+
+---- diversity:  1.2
+---- Generated with seed: " buy. tim even convinced them to get an "
+ buy. tim even convinced them to get an abendor. every heest was wanting to the examing. i looked in my by impression. he used a decarition to fantyo. bob hit difference himself crompher. on tracking jokes of potatoam, and gradmed the door.
+
+--------------------------------------------------
+Iteration  12
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 1.1919
+
+---- diversity:  0.5
+---- Generated with seed: "ke very little time to make.
+andrea drea"
+ke very little time to make.
+andrea dreaded to the trash but she lived the starty. he could warn a new house. he was having to help her great jones helped a pig.
+jennif refused to the mandh and the ball problem. lucy was walking her parents
+
+---- diversity:  1.0
+---- Generated with seed: "ke very little time to make.
+andrea drea"
+ke very little time to make.
+andrea dreading on him offer. ching into the ince. i changed up the bus loves, out the bite. sefuly was cleft she reciived a day.
+she loved her letely helper's grandma did. chool worked up was nother facrery par
+
+---- diversity:  1.2
+---- Generated with seed: "ke very little time to make.
+andrea drea"
+ke very little time to make.
+andrea dreaded. about watchingin, i was forwnotes angit. outaly of the pain came omes paver. she ovened the movie. and thought he ather set juypled whire to make some fonbreveer. in diving juvies a good on a mov
+
+--------------------------------------------------
+Iteration  13
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 1.1838
+
+---- diversity:  0.5
+---- Generated with seed: "led to diet even without the scale's fee"
+led to diet even without the scale's feeds to have his friends. she was a street to work. he was started the poin came. he was thor, he was a baseball town. he was a lot to halfuna.
+i was a poin in the party. she said and had to be a bus to
+
+---- diversity:  1.0
+---- Generated with seed: "led to diet even without the scale's fee"
+led to diet even without the scale's feed lug was suraty. i have no more finished as many like because oretments. it had been on a wdarbow betuals back out.
+tally went to a sudper of him.
+dy's finh it had to plant her cursing.
+tank took one
+
+---- diversity:  1.2
+---- Generated with seed: "led to diet even without the scale's fee"
+led to diet even without the scale's feeds he looked home a sweet at the song. mik started himself by her bed. he got in ontricks of fast us. dog's dise is rule, he stouged his pians. drinn's udes inmidriding my pitt no . she worked and dri
+
+--------------------------------------------------
+Iteration  14
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 1.1646
+
+---- diversity:  0.5
+---- Generated with seed: "d mick to make sure the baseboard was st"
+d mick to make sure the baseboard was stress thing his father. they were a lot of boarding meal. he didn't stop an a stranger better. the innub and he wouldn't have any was and their man. she started to pup on a father. when she was sure he
+
+---- diversity:  1.0
+---- Generated with seed: "d mick to make sure the baseboard was st"
+d mick to make sure the baseboard was start for bam.
+sam was comitions and their flight ta. he gaving that inses over the board. he didn't came hard people to his mom. donn and notic vopulad test. on the man day, his dana hit it. she and in
+
+---- diversity:  1.2
+---- Generated with seed: "d mick to make sure the baseboard was st"
+d mick to make sure the baseboard was starting my beles. she asmed but tom a newt rud to. my came was full and spared.
+jexir got out of party together arut in tists dishes in amazing. he thought he didn't rine him, and he hawaing and bring.
+
+--------------------------------------------------
+Iteration  15
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 1.1539
+
+---- diversity:  0.5
+---- Generated with seed: "ancer on her face. i had to put her down"
+ancer on her face. i had to put her down. the day of her friends dollars, he was happy to treat to buy some family. she took it to the store to him. he decided to take her for the trip to get out of the couldn.
+jaxe had been more and presse
+
+---- diversity:  1.0
+---- Generated with seed: "ancer on her face. i had to put her down"
+ancer on her face. i had to put her down. she soouthed her finally castlef her saiply.
+when i did not expelied when she faired his way. it was a lot of new leg, pay didn't sared the curb. i bought thereal in others house healthy. i have tea
+
+---- diversity:  1.2
+---- Generated with seed: "ancer on her face. i had to put her down"
+ancer on her face. i had to put her down. we bought the desk and felt the pack. the opport never took the small of candy. joe fell was the car. some poun blased on and i was lonely. manilag was the smalthas of natks to buy allie. jell. me e
+
+--------------------------------------------------
+Iteration  16
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 1.1412
+
+---- diversity:  0.5
+---- Generated with seed: "ind a new store.
+christian wanted to lea"
+ind a new store.
+christian wanted to learn a house. he was an assection. he couldn't spent the fature since succes. we went to the mall. and found a sweet rabbit be guitar. he looked on the trash and he was a friend later and they had a lea
+
+---- diversity:  1.0
+---- Generated with seed: "ind a new store.
+christian wanted to lea"
+ind a new store.
+christian wanted to learn a dience. billy smelled she showed out to the new from book. when her mom was excited to make the mile for her pacey. attrife, inchits's stat, suger and replieted in ad. she sat worrwerstle tried t
+
+---- diversity:  1.2
+---- Generated with seed: "ind a new store.
+christian wanted to lea"
+ind a new store.
+christian wanted to learn anyoner. lises in feel and drank blie.
+i lent a new fatting in his car. when she went to the salo of eadnnys becime on the seed no insteaduliner baskety town. one day we purined beday when andnakes
+
+--------------------------------------------------
+Iteration  17
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 1.1658
+
+---- diversity:  0.5
+---- Generated with seed: "for it. we just let them have it and tri"
+for it. we just let them have it and tried out of boyfriend his team jo!
+getly had a poem of the markers. he was a bach trip to the car of the girl street hoped and sat as he was excited to go to the mare. she was about the lead and the reb
+
+---- diversity:  1.0
+---- Generated with seed: "for it. we just let them have it and tri"
+for it. we just let them have it and tried out.
+upp saw that road finally the teacher saw her plane quickly rall. i wanted up an ake had straight. afte charies, she poured a ching. she proude help a bike she picks. she searched dooply in th
+
+---- diversity:  1.2
+---- Generated with seed: "for it. we just let them have it and tri"
+for it. we just let them have it and tried to sname. she is shop, he noticed to agge. he began he now mirde frain time how it dinber. she wasn't trained spare cheack. the strien irofe got threes that sad. she felt around affeen upseculic de
+
+--------------------------------------------------
+Iteration  18
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 1.2271
+
+---- diversity:  0.5
+---- Generated with seed: "just couldn't go in. headaches would kee"
+just couldn't go in. headaches would keep from the world recomed. every year and was always had a pretty confette. he wanted to continue and wanted to be convince to pay of his own. however, he had just she recearsed on the piece. he was a
+
+---- diversity:  1.0
+---- Generated with seed: "just couldn't go in. headaches would kee"
+just couldn't go in. headaches would keep the included up three gift. but no one living the way to sepatemen, ali's day.
+she began an ate a girlfriend. he lions dollarss as it as when the fightth looked but something. tud had didn't wark to
+
+---- diversity:  1.2
+---- Generated with seed: "just couldn't go in. headaches would kee"
+just couldn't go in. headaches would keep every in separinn. after my friends on, as he had never succe newd, he left by mupa's tires. i had begoned large, as lot and seef.
+jemiem come todawn.
+decition eved chasing for the man buint.
+look.
+
+--------------------------------------------------
+Iteration  19
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 1.5052
+
+---- diversity:  0.5
+---- Generated with seed: "s. billy eventually found the magician a"
+s. billy eventually found the magician and decired the conter salmon. he was ver to can to fun a do to purched the houseroom girl and wort. the sal droutring to the man she was comment. i was glabled the mov. on the man so he was okay and o
+
+---- diversity:  1.0
+---- Generated with seed: "s. billy eventually found the magician a"
+s. billy eventually found the magician and decire underdev feot gurttins. i classed one milh int. the helt in the trip.
+mily $job beckulw. he was gl½ough, so out time"valy morey the firste what i now trick and $caks."weer away it was humble
+
+---- diversity:  1.2
+---- Generated with seed: "s. billy eventually found the magician a"
+s. billy eventually found the magician and getsar like toawned the mail of the cour.. one day. she was very nectine. than a new chip my named like and peady, he had was in clive themal saozer.y
+near are for the liece. i go as as's pabens fo
+
+--------------------------------------------------
+Iteration  20
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 4.6881
+
+---- diversity:  0.5
+---- Generated with seed: " video. his mom was in the kitchen, doin"
+ video. his mom was in the kitchen, doine io iintir ari ioli aler seralilite a fori hee shen thea.  icese toun iters se to try ewa alhtune tistests ato then tinow orli ein se to toapithen ir. oriled lat thead atoshe atheree a.t itre iali it
+
+---- diversity:  1.0
+---- Generated with seed: " video. his mom was in the kitchen, doin"
+ video. his mom was in the kitchen, doine asto torne se tis. he wa the gra hroess rie deisentor arer. sh to luent enet. en intsthly sor tain arith aloulatuline toreother aen shearse to inioo we whee. rues here  iw ir.poateatoreiase idter. s
+
+---- diversity:  1.2
+---- Generated with seed: " video. his mom was in the kitchen, doin"
+ video. his mom was in the kitchen, doine io. inda sorve sh il thersa theek inelp hed hee hed ornin. ser ines inthinefar ers. routir i b,e t se wa diaene hish he carar. tis atedtorar ohen. edho teevioted thed hen e iched iitor tost toethe n
+
+--------------------------------------------------
+Iteration  21
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 7.8229
+
+---- diversity:  0.5
+---- Generated with seed: "that late on a work night again.
+vivienn"
+that late on a work night again.
+vivienn aan lonter arret  o orhetteh re oal at aassat anntorenthero then ant hte thehereent oorsoothee at at he the t aan ohe t te asthil thel thahn ita t an asenet in orort t at hhatart an oll healheat ohoo
+
+---- diversity:  1.0
+---- Generated with seed: "that late on a work night again.
+vivienn"
+that late on a work night again.
+vivienn ah or alroro t ooroene al n o ooaleent or tre ar a thena lot orileat at ared oo allin ot horonthart oalo arror ret ite ainee olla  a ohhet ast  torin o on  arren tt thei t rat  ore all thooon orooila
+
+---- diversity:  1.2
+---- Generated with seed: "that late on a work night again.
+vivienn"
+that late on a work night again.
+vivienn io ort horet thil ttoohet hiato t o tt   oore as lan ar it hast hoa thei aano ore shehea oisetthea ehaht ore il ari aashealla loo  arlaner heal ae as ort  anne ohere a lanthir nh at oaririt ain ooo o
+
+--------------------------------------------------
+Iteration  22
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 7.4504
+
+---- diversity:  0.5
+---- Generated with seed: "leared the snow from the street in front"
+leared the snow from the street in fronten t ohter tederas ar arhedarst l thee taera neddetossssteneette thelst thters nentherasdlenes shs t atd thede t adst hed thd nenenedoreenthenthenene th te ati thenentth ans sis tinitittell hened hos
+
+---- diversity:  1.0
+---- Generated with seed: "leared the snow from the street in front"
+leared the snow from the street in fronten t erera tenesellth ir tritito rerele t atht ll har todit ald ent einetasde d hethinositineelene th deneleraos thishelandeet allot sidedila te ho sinth tolllate s d sedenalisenesent latheithe hiles
+
+---- diversity:  1.2
+---- Generated with seed: "leared the snow from the street in front"
+leared the snow from the street in fronted  atitidas hi tilareedea th ther tona se oas alted ilrenenadisd irratte thehe ed hin torse henele teenelotat o rheened hateioenasdis soll ritas ot atht t hndahat terooritisas la eathe litorane oa ti
+
+--------------------------------------------------
+Iteration  23
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 7.0074
+
+---- diversity:  0.5
+---- Generated with seed: "oot. he rolled his ankle and screamed. m"
+oot. he rolled his ankle and screamed. meradered it dol tola teniea ted terenolontehh dol hedered te s as rereronas here hare toterdoss hernteletos t nad nethnte derereneshant thte diteh l terinr herad has t thnte s sint hed has haseredhase
+
+---- diversity:  1.0
+---- Generated with seed: "oot. he rolled his ankle and screamed. m"
+oot. he rolled his ankle and screamed. mert an loated tastha ten eroent id roedidos dhtoliseothenteede henthe tenoas heasenas netess hadererederted donothreleressar t d tase radar dath l then d t e tene tedererenedor ole esolenehin hes red
+
+---- diversity:  1.2
+---- Generated with seed: "oot. he rolled his ankle and screamed. m"
+oot. he rolled his ankle and screamed. mirndeatedalan sas eoas  oreh tashinooded th rodrohileesroasoenda t hisroo oeisinen die or saetedare aroererh the ienententet doastorradios ertoas dolreristedinrt lte iranentot ho das  asidelt d hdis t
+
+--------------------------------------------------
+Iteration  24
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 6.8900
+
+---- diversity:  0.5
+---- Generated with seed: "he weatherman.
+john was very focused on "
+he weatherman.
+john was very focused on nis  slls aso oes theshenr ttonra s ssttt llll nonrer alla nelasont toane alsls na ana talt to r at s aslin  toel s hninnorr r  illa sinl nllo lo allarl a tia daslsanline t ane tat ite s tlone  rern n
+
+---- diversity:  1.0
+---- Generated with seed: "he weatherman.
+john was very focused on "
+he weatherman.
+john was very focused on  idaror d t ialasrases tsll na t te  aohenoorsa ere asoe t isind a slane d tsid aa ralllln i hr he in ni loorera ta anaane rin r lertin art aslehed nro toer ia ttt  aloneille lor h  nsnne o saa a t na
+
+---- diversity:  1.2
+---- Generated with seed: "he weatherman.
+john was very focused on "
+he weatherman.
+john was very focused on eltai t nat rarosttho nst ne is
+ s tsonollo sot art rlha s thra sthea arh t hooenalall t nnannriana in t   aie annd rtt t tit rla s anedinaisaar ir toa slsantin ss toa aallallsrit h an a tan a inella
+
+--------------------------------------------------
+Iteration  25
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 6.1731
+
+---- diversity:  0.5
+---- Generated with seed: "sports. her favorite soccer team was pla"
+sports. her favorite soccer team was plath he o n ar she tase ish sh he th it an t t aner  ar  lredal hee  h lr ton   as the an s tis anh  ateed the s t tas a  as   hl id he tha  te  tss s rd d s the d thi ad d loar in  s t  t tothe  isst t
+
+---- diversity:  1.0
+---- Generated with seed: "sports. her favorite soccer team was pla"
+sports. her favorite soccer team was plailane  dhal aer ist sid l red  n id ha idh he hhra t anoord  de  ho sheati asereritans  hed s hirid thoithe tere thes  the ase atirr d at eder heed tothti hhe t tois talr arat t nstlesish  an ho  aed
+
+---- diversity:  1.2
+---- Generated with seed: "sports. her favorite soccer team was pla"
+sports. her favorite soccer team was plal ttt are haer h his arsar an haithheeret ed   hed aae he he the otoraneditededin lo  ha iidas s r loe she ist nane in aersh irha ha id ss t rar lone hratetased thtiner hhesrathare  ahid n  ianas   oe
+
+--------------------------------------------------
+Iteration  26
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 5.8873
+
+---- diversity:  0.5
+---- Generated with seed: " loved to cook. her husband was in a car"
+ loved to cook. her husband was in a carerere rer he ee shee ee red to heras toran s s int 0he h s xo  ho sarea an ahe ter an alinr ar the dethande hnn ttt her than aerhe the t hhen  a a h as roed t?ar ther a sher t t not he rd rono raed ta
+
+---- diversity:  1.0
+---- Generated with seed: " loved to cook. her husband was in a car"
+ loved to cook. her husband was in a careras xe it an an ked te tid ante rasate tid horanre thdrare t easiote tht d d rhnne shirt ohent roalie t shirherisra rantea a rerar rardee thereroner re rrs ronsata th aso holle r sheeiede s or k tart
+
+---- diversity:  1.2
+---- Generated with seed: " loved to cook. her husband was in a car"
+ loved to cook. her husband was in a care sarerra 0eedratalot e saer s thtathederoerrot lharaoraherth teute t. telatroa an s lisaala aad t ssro
+ rinthnir so e sonne torortrra ro e oo rh te alisaas kanl doeerhe toeandee erarasasoa  lasar te
+
+--------------------------------------------------
+Iteration  27
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 5.6799
+
+---- diversity:  0.5
+---- Generated with seed: " got out of my car. upon going inside th"
+ got out of my car. upon going inside th ter dn hdrestio  dnd hh hesar e ho s in arad tht o d rs hn tor r a th inthe de he hr ton hrl ea dhi dni h h  a a h hisni hen  d he t lh a ann t ra ane n a i t the s hn the the  helhad  io s ht anded
+
+---- diversity:  1.0
+---- Generated with seed: " got out of my car. upon going inside th"
+ got out of my car. upon going inside the drod toron tite sinh s hodred rtio hes he idthshi heala thre sir tn h tains indind tar ndelorhe anns e hr a lon lora te hnrli s heo   nadrr host oritas ed a is to isd hns ho hra thera he eed  rna ti
+
+---- diversity:  1.2
+---- Generated with seed: " got out of my car. upon going inside th"
+ got out of my car. upon going inside thilsinsaathririn erd his haaa hnlot the a ane h aslo thini orsd os s hitoiras ahe aserdo orthnt  o sortis dr hr sie hhe st thooroa idiei aias ndia  ndoris rnli hn llores a lardto iidin tlnhrher tneied
+
+--------------------------------------------------
+Iteration  28
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 5.2703
+
+---- diversity:  0.5
+---- Generated with seed: "ited to finally be a bus driver!
+kim wan"
+ited to finally be a bus driver!
+kim wan tne soale in thele te are ansedeet aa ar  aleer o oon sa ted se ie senoes o annas nar la trelhe shitt astseeaed oan onisaterner en toraionarn ar er tner tos at oer t inet od torl ailas al ther soer h
+
+---- diversity:  1.0
+---- Generated with seed: "ited to finally be a bus driver!
+kim wan"
+ited to finally be a bus driver!
+kim wanare ieds lae anostrt to ee hne tonte oaireaes insle ooenndarthd a seor in eda dasetoisiio ns aooieeaso eiseinht taarn rratheetodiniodnsol rn oo earahtirs tao o stadtoo ne thiesin aa sre rersereed athe
+
+---- diversity:  1.2
+---- Generated with seed: "ited to finally be a bus driver!
+kim wan"
+ited to finally be a bus driver!
+kim wan iared  la saraa ho e iseristohhaedeed nir oi he sieaer art irinterinsrs ne soia aetndnthanahas eo  ntisoan taei h tar in teedoaatorie tilen liseteoneli shnre hoite alan nttoinalene  anoannntsite iiie
+
+--------------------------------------------------
+Iteration  29
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 5.0345
+
+---- diversity:  0.5
+---- Generated with seed: "onths for her hair to grow back out.
+kyl"
+onths for her hair to grow back out.
+kyls thene hi his toe tin the s so dis i she she a  he so  he henathe to a se he sas sas tho he d s s hi so the he sos s so s he ho ta tht sor a s a a sas t s to he he the in saa to he so he s s to hes h
+
+---- diversity:  1.0
+---- Generated with seed: "onths for her hair to grow back out.
+kyl"
+onths for her hair to grow back out.
+kylde ant dene ro  hesna in thes sirtde l ea here has iet she sisond hito irosa hana are onandr and tt he in han and iirs he re sta rdrer a osss thetoesoo hishan aast toelatas a horinoa in l dor lidsione
+
+---- diversity:  1.2
+---- Generated with seed: "onths for her hair to grow back out.
+kyl"
+onths for her hair to grow back out.
+kylltan shetrt anaano inindererde has  hir sad a a  it se s ts s t oh thitalth se hre a ths thonss taren t r  arasoas onoo heseo h inetoineeii rhantrsed stiorh tales he so hed ar aid terrhisoso hend a ee
+
+--------------------------------------------------
+Iteration  30
+Epoch 1/1
+91134/91134 [==============================] - 37s - loss: 4.8602
+
+---- diversity:  0.5
+---- Generated with seed: "a bus to her work. she had to pee very b"
+a bus to her work. she had to pee very bot he torind the the thas ther thist tillind the tor toond at and inthand talllthind the to to thand to tore ind too thint and he sot and the and atondet the lar the the tore the tot the the soot and
+
+---- diversity:  1.0
+---- Generated with seed: "a bus to her work. she had to pee very b"
+a bus to her work. she had to pee very bolir tord rinded sadotonthein toot thatthat ther thest hindones oreland a anllo ther thar dot an rir toal siad lis the tonrlalthere hees hollit inrtad andho lrit ons on ho toatentde intos sor dor ler
+
+---- diversity:  1.2
+---- Generated with seed: "a bus to her work. she had to pee very b"
+a bus to her work. she had to pee very botooho the ris eoosthele int ondel tho orrloredrohd danrs sne ser hiti he saed ora hors ons toshetttonerthe tororis lla doonths ord la tres andorot notlntad sor lada rer ne sas ar sherndorotsoirarisoo
