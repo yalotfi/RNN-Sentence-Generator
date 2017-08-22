@@ -9,41 +9,43 @@ import numpy as np
 # import sys
 # import pprint as pp
 
+from models.architecture import lstm_basic
+
 from keras.preprocessing.sequence import pad_sequences
 from keras.utils import to_categorical
 
-from keras.models import Sequential
-from keras.layers.embeddings import Embedding
-from keras.layers import LSTM
-from keras.layers import Dense
-from keras.layers import Activation
-from keras.optimizers import RMSprop
+# from keras.models import Sequential
+# from keras.layers.embeddings import Embedding
+# from keras.layers import LSTM
+# from keras.layers import Dense
+# from keras.layers import Activation
+# from keras.optimizers import RMSprop
 # TESTING DEPENDENCIES --------------------------
 
 
 # --------------------------------------------
 # TESTING FUNCTIONS --------------------------
 # --------------------------------------------
-def lstm_basic(hidden, max_len, vocab_size):
-    model = Sequential()
-    model.add(LSTM(hidden, input_shape=(max_len, vocab_size)))
-    model.add(Dense(vocab_size, activation='softmax'))
-    model.compile(loss='categorical_crossentropy', optimizer=RMSprop(lr=0.01))
-    return  model
+# def lstm_basic(hidden, max_len, vocab_size):
+#     model = Sequential()
+#     model.add(LSTM(hidden, input_shape=(max_len, vocab_size)))
+#     model.add(Dense(vocab_size, activation='softmax'))
+#     model.compile(loss='categorical_crossentropy', optimizer=RMSprop(lr=0.01))
+#     return  model
 
 
-def lstm_embedding(batch_size, timesteps, vocab_size, embeddings, hidden):
-    print("Building Model...")
-    model = Sequential()
-    model.add(Embedding(batch_input_shape=(batch_size, timesteps),
-                        input_dim=vocab_size + 1,
-                        output_dim=embeddings,
-                        mask_zero=True))
-    model.add(LSTM(hidden, return_sequences=True, stateful=True))
-    model.add(Dense(vocab_size + 1, activation='softmax'))
-    model.compile(loss='sparse_categorical_crossentropy',
-                  optimizer=RMSprop(lr=0.01))
-    return model
+# def lstm_embedding(batch_size, timesteps, vocab_size, embeddings, hidden):
+#     print("Building Model...")
+#     model = Sequential()
+#     model.add(Embedding(batch_input_shape=(batch_size, timesteps),
+#                         input_dim=vocab_size + 1,
+#                         output_dim=embeddings,
+#                         mask_zero=True))
+#     model.add(LSTM(hidden, return_sequences=True, stateful=True))
+#     model.add(Dense(vocab_size + 1, activation='softmax'))
+#     model.compile(loss='sparse_categorical_crossentropy',
+#                   optimizer=RMSprop(lr=0.01))
+#     return model
 
 
 # def sample(preds, temperature=1.0):
@@ -182,16 +184,16 @@ def main(story_path):
     hidden = 128
 
     # Compile and summarize architecture
-    model = lstm_embedding(batch_size, steps, vocab_size, embeddings, hidden)
-    # model = lstm_basic(hidden, max_len, vocab_size)
+    # model = lstm_embedding(batch_size, steps, vocab_size, embeddings, hidden)
+    model = lstm_basic(hidden, max_len, vocab_size)
     print(model.summary())
 
     # Training
-    epochs = 30
-    model.fit(X_train, y_train,
-              batch_size=batch_size,
-              epochs=epochs,
-              verbose=1)
+    # epochs = 30
+    # model.fit(X_train, y_train,
+    #           batch_size=batch_size,
+    #           epochs=epochs,
+    #           verbose=1)
     # model.save_weights('rnn_weights.h5')
 
     # # Generate
