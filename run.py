@@ -1,30 +1,23 @@
 import os
 
 from models.architectures import lstm_basic
-from preprocessing.Preprocessor import Preprocessor
+from utils.Preprocessors import CharProcessor
 
 
 def main(txt_path):
-    print('Preprocessing..\n')
+    # Preprocessing
+    maxlen = 20
+    stepsize = 1
     corpus = open(txt_path).read().lower()
-    PreProc = Preprocessor(corpus, maxlen=40, step=1)
+    char_level = CharProcessor(corpus, maxlen=maxlen, step=stepsize)
+    (X_train, y_train) = char_level.training_set_char()
 
-    print('Corpus Length: {}\nVocab Size: {}\n'.format(
-        len(PreProc.corpus), len(PreProc.vocab))
-    )
-    print('Dictionary Map: {} | {}\n'.format(
-        PreProc.char2idx['.'], PreProc.idx2char[6]))
-    print('Number of sequences: {}\n'.format(
-        PreProc.X.shape[0])
-    )
-    print('X: {}\ny: {}\n'.format(PreProc.X.shape, PreProc.y.shape))
+    # Hyperparams
+    hidden = 128
+    vocab_size = len(char_level.char_list)
 
     print('Compiling Model...\n')
-    hidden = 128
-    max_len = 20
-    vocab_size = 100
-
-    model = lstm_basic(hidden, max_len, vocab_size)
+    model = lstm_basic(hidden, maxlen, vocab_size)
     print(model.summary())
 
 
