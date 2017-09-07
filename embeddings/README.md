@@ -1,19 +1,11 @@
-## Setup
+## Using Word Embeddings
 
-For dependencies, run `pip install -r requirements.txt`
+Representing words as dense vectors proves useful both on their own and as inputs for generative language models.
 
-The main one is obviously spaCy. I ran these scripts in a virtual environment. While its not necessary for local development, when you integrate this into the application stack, containerizing the service might be ideal.
+### Global Vector for Word Representation (GLoVe)
 
-You can largely ignore the test script.
+An unsupervised model that came out of the Stanford NLP group. It is trained on a co-occurence matrix which counts word-word frequencies in a corpus. For our purposes, the spaCy NLP module provides high level API methods to access pre-trained word vectors.
 
-## Usage
+### Word2Vec
 
-Really, it just comes down to the example three lines of code in the `main()` function.
-
-1. Process each word through the spaCy NLP pipeline
-2. Retrieve the spaCy token objects from their parent doc objects
-3. Compute the cosine similarity metric between each word embedding
-
-I documented the code, which is just a wrapper for the spaCy API. In terms of implementation, loading the spaCy english model each time the function is called will add a lot of overhead. Ideally, this would be loaded once when the application boots.
-
-`get_vec(a)` is an additional function which will fetch the actual word embedding of a spaCy token. Useful if you want to store the GLoVe embeddings.
+Another model called Word2Vec takes a neuronal approach to learning vector representations of words. The objective task is defined by either the skip-gram or continuous bag of words models wherein the model predicts a word given a context or predicts a context given a word, respectively. In this case, the gensim Python package provides a highly optimized solution for training a Wrod2Vec model.
