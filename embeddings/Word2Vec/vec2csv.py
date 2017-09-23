@@ -16,11 +16,11 @@ def load_vecs(fpath):
     return Word2Vec.load(fpath)
 
 
-def most_similar(model, word, topn=10):
+def most_similar(model, word, topn):
     return model.similar_by_word(word, topn=topn)
 
 
-def vec2csv(model, targets, outfile, topn=10):
+def vec2csv(model, targets, outfile, topn):
     with open(outfile, 'w', newline='') as f:
         writer = csv.writer(f, dialect='excel')
         for target in targets:
@@ -30,7 +30,7 @@ def vec2csv(model, targets, outfile, topn=10):
                 writer.writerow(row)
 
 
-def main(infile, outfile, model_name, n=10):
+def main(infile, outfile, model_name, topn):
     # Set correct path for file i/o
     inpath = os.path.join('embeddings', 'Word2Vec', infile)
     outpath = os.path.join('embeddings', 'Word2Vec', outfile)
@@ -41,12 +41,13 @@ def main(infile, outfile, model_name, n=10):
     model = load_vecs(vecpath)
 
     # Write scores to outfile
-    vec2csv(model, targets, outpath, n)
+    print('Writing CSV')
+    vec2csv(model, targets, outpath, topn)
 
 
 if __name__ == '__main__':
     infile = "test_targets.csv"
     outfile = "import_scores.csv"
     model_name = "vecs_300_window11"
-    n_word = 10
+    n_word = 50
     main(infile, outfile, model_name, n_word)
