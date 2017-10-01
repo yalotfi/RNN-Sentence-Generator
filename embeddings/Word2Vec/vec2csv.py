@@ -30,11 +30,11 @@ def vec2csv(model, targets, outfile, topn):
                 writer.writerow(row)
 
 
-def main(infile, outfile, model_name, topn):
+def main(infile, outfile, model_name, model_type, topn):
     # Set correct path for file i/o
     inpath = os.path.join('embeddings', 'Word2Vec', infile)
     outpath = os.path.join('embeddings', 'Word2Vec', outfile)
-    vecpath = os.path.join('models', 'embeddings', model_name)
+    vecpath = os.path.join('models', 'embeddings', model_type, model_name)
 
     # Load infile and model
     targets = load_targets(inpath)
@@ -49,5 +49,6 @@ if __name__ == '__main__':
     infile = "test_targets.csv"
     outfile = "import_scores.csv"
     model_name = "vecs_300_window11"
+    model_type = "roc_grimm"
     n_word = 50
-    main(infile, outfile, model_name, n_word)
+    main(infile, outfile, model_name, model_type, n_word)
